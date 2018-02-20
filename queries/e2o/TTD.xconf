@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TTD templ="%doc_id%;%ttd_dt%;" empty="no">
+  <![CDATA[
+select doc_id, convert(varchar(19), inserted_ts, 121) ttd_dt, erp_id from TTD 
+    order by 1, 2
+  ]]>
+</TTD>

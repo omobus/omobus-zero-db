@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<service_types templ="%service_type_id%;%descr%;">
+  <![CDATA[ 
+select service_type_id, descr from service_types
+    order by service_type_id
+  ]]>
+</service_types>

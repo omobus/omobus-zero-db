@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<delivery_types templ="%delivery_type_id%;%descr%;">
+  <![CDATA[ 
+select delivery_type_id, descr from delivery_types
+    order by 1
+  ]]>
+</delivery_types>

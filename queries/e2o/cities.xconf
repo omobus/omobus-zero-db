@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cities templ="%city_id%;%pid%;%ftype%;%descr%;%country_id%;">
+  <![CDATA[ 
+select city_id, pid, ftype, descr, country_id from cities
+    order by 1
+  ]]>
+</cities>

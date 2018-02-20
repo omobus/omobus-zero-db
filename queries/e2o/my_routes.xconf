@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<my_routes templ="%user_id%;%account_id%;%p_date%;%duration%;%row_no%;">
+  <![CDATA[
+select user_id, account_id, p_date, row_no, duration from my_routes
+    order by 1, 2
+  ]]>
+</my_routes>

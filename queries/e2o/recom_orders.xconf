@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<recom_orders templ="%account_id%;%prod_id%;%pack_id%;%qty%;%stock_wf%;">
+  <![CDATA[ 
+select account_id, prod_id, pack_id, qty, stock_wf from recom_orders
+    order by 1, 2
+  ]]>
+</recom_orders>

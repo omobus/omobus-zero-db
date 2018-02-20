@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<working_hours templ="%working_hours_id%;%descr%;">
+  <![CDATA[ 
+select working_hours_id, descr from working_hours
+    order by 1
+  ]]>
+</working_hours>

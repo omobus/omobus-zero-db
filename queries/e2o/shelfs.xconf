@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shelfs templ="%account_id%;%categ_id%;%brand_ids%;%target%;">
+  <![CDATA[
+select account_id, categ_id, brand_ids, target from shelfs
+    order by 1, 2
+  ]]>
+</shelfs>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<warehouses templ="%distr_id%;%wareh_id%;%descr%;">
+  <![CDATA[ 
+select distr_id, wareh_id, descr from warehouses
+    order by 1, 2
+  ]]>
+</warehouses>

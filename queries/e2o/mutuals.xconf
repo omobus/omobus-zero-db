@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mutuals templ="%distr_id%;%account_id%;%mutual%;">
+  <![CDATA[ 
+select distr_id, account_id, mutual from mutuals
+    order by 1, 2
+  ]]>
+</mutuals>

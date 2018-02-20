@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rating_criterias templ="%rating_criteria_id%;%pid%;%ftype%;%descr%;%wf%;%row_no%;%mandatory%;">
+  <![CDATA[
+select rating_criteria_id, descr, row_no, wf, mandatory from rating_criterias
+    order by 1
+  ]]>
+</rating_criterias>

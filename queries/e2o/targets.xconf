@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<targets templ="%target_id%;%target_type_id%;%subject%;%body%;%b_date%;%e_date%;%dep_id%;%account_ids%;">
+  <![CDATA[
+select target_id, target_type_id, subject, body, b_date, e_date, dep_id, account_ids from targets
+    order by 1
+  ]]>
+</targets>

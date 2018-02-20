@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sales_targets templ="%account_id%;%prod_id%;%year%;%month%;%pack_id%;%qty%;%amount%;">
+  <![CDATA[
+select account_id, prod_id, year, month, pack_id, qty, amount from sales_targets
+    order by 1, 2, 3, 4
+  ]]>
+</sales_targets>

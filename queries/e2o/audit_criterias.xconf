@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<audit_criterias templ="%audit_criteria_id%;%descr%;%wf%;%mandatory%;%row_no%;">
+  <![CDATA[
+select audit_criteria_id, descr, wf, row_no, mandatory from audit_criterias
+    order by 1
+  ]]>
+</audit_criterias>

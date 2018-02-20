@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<distributors templ="%distr_id%;%pid%;%descr%;%country_id%;">
+  <![CDATA[
+select distr_id, pid, descr, country_id from distributors
+    order by 1
+  ]]>
+</distributors>

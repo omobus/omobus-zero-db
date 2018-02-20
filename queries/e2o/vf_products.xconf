@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vf_products templ="%account_id%;%vf_id%;%prod_id%;%row_no%;">
+  <![CDATA[
+select vf_id, account_id, prod_id, row_no from vf_products
+    order by 1, 2, 3
+  ]]>
+</vf_products>

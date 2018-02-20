@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<constants templ="%distr_id%;%const_id%;%value%;">
+  <![CDATA[
+select distr_id, const_id, "value" from constants
+    order by 1
+  ]]> 
+</constants>

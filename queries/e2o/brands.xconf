@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<brands templ="%brand_id%;%descr%;%dep_id%;%multi%;%competitor%;%row_no%;">
+  <![CDATA[ 
+select brand_id, descr, dep_id, multi, competitor, row_no from brands
+    order by 1
+  ]]>
+</brands>

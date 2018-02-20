@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<storage 
+    module="stor_tds"
+    server="srv1"
+    storage="omobus-zero-db"
+    user="omobus"
+    password="0"
+    trace="no"
+    />
