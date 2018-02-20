@@ -730,18 +730,6 @@ go
 
 -- **** OMOBUS -> ERP streams ****
 
-create table comments (
-    doc_id 		uid_t 		not null primary key,
-    fix_dt 		datetime_t 	not null,
-    doc_no 		uid_t 		not null,
-    user_id 		uid_t 		not null,
-    dev_login 		uid_t 		not null,
-    account_id 		uid_t 		not null,
-    comment_type_id 	uid_t 		not null,
-    doc_note 		note_t 		null,
-    inserted_ts 	ts_t 		not null default current_timestamp
-);
-
 create table additions (
     doc_id 		uid_t 		not null primary key,
     fix_dt 		datetime_t 	not null,
@@ -756,6 +744,24 @@ create table additions (
     number 		code_t 		null,
     attr_ids 		uids_t 		null,
     account_id 		uid_t 		not null,
+    inserted_ts 	ts_t 		not null default current_timestamp
+);
+
+create table adjustments (
+    doc_id 		uid_t 		not null primary key,
+    fix_dt 		datetime_t 	not null,
+    doc_no 		uid_t 		not null,
+    user_id 		uid_t 		not null,
+    dev_login 		uid_t 		not null,
+    account_id 		uid_t 		not null,
+    erp_id 		uid_t 		not null,
+    delivery_date 	date_t 		not null,
+    rows 		int32_t 	not null,
+    prod_id 		uid_t 		not null,
+    row_no 		int32_t 	not null check (row_no >= 0),
+    pack_id 		uid_t 		not null,
+    pack 		numeric_t 	not null,
+    qty 		numeric_t 	not null,
     inserted_ts 	ts_t 		not null default current_timestamp
 );
 
