@@ -508,6 +508,17 @@ create table products (
     country_ids 	countries_t 	null
 );
 
+create table promo_prices (
+    distr_id 		uid_t 		not null,
+    account_id 		uid_t 		not null,
+    prod_id 		uid_t 		not null,
+    pack_id 		uid_t 		not null,
+    price 		currency_t 	not null,
+    b_date 		date_t 		not null,
+    e_date 		date_t 		not null,
+    primary key (distr_id, account_id, prod_id, b_date)
+);
+
 create table rating_criterias (
     rating_criteria_id 	uid_t 		not null primary key,
     pid 		uid_t 		null,
@@ -571,8 +582,9 @@ create table restrictions (
     account_id 		uid_t 		not null,
     prod_id 		uid_t 		not null,
     pack_id 		uid_t 		not null,
-    min_qty 		numeric_t 	null check (min_qty is null or (min_qty >= 0)),
-    max_qty 		numeric_t 	null check (max_qty is null or (max_qty >= 0)),
+    min_qty 		numeric_t 	null check (min_qty is null or min_qty >= 0),
+    max_qty 		numeric_t 	null check (max_qty is null or max_qty >= 0),
+    quantum 		int32_t 	null check (quantum is null or quantum > 0),
     primary key (distr_id, account_id, prod_id)
 );
 
