@@ -584,7 +584,7 @@ create table restrictions (
     pack_id 		uid_t 		not null,
     min_qty 		numeric_t 	null check (min_qty is null or min_qty >= 0),
     max_qty 		numeric_t 	null check (max_qty is null or max_qty >= 0),
-    quantum 		int32_t 	null check (quantum is null or quantum > 0),
+    quantum 		numeric_t 	null check (quantum is null or quantum > 0),
     primary key (distr_id, account_id, prod_id)
 );
 
@@ -631,6 +631,13 @@ create table shelfs ( /* distribution of brands on the shelf in the category */
     brand_ids 		uids_t 		not null,
     target 		wf_t 		null check(target between 0.01 and 1.00), /* Share-of-Shelf recomendations */
     primary key(account_id, categ_id)
+);
+
+create table shipments (
+    distr_id 		uid_t 		not null,
+    account_id 		uid_t 		not null,
+    d_date 		date_t 		not null,
+    primary key (distr_id, account_id, d_date)
 );
 
 create table std_prices (

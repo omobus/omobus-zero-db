@@ -92,6 +92,7 @@
 <xi:include href="../queries/e2o/sales_targets.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/e2o/service_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/e2o/shelfs.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/e2o/shipments.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/e2o/std_prices.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/e2o/symlinks.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/e2o/target_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
@@ -176,6 +177,7 @@
     <sales_targets />
     <service_types />
     <shelfs />
+    <shipments />
     <std_prices />
     <symlinks />
     <target_types />
