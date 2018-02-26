@@ -320,9 +320,16 @@ create table erp_products (
     primary key (doc_id, erp_id, prod_id)
 );
 
-create table job_titles (
-    job_title_id 	uid_t 		not null primary key,
-    descr 		descr_t 	not null
+create table floating_prices (
+    distr_id 		uid_t 		not null,
+    account_id 		uid_t 		not null,
+    prod_id 		uid_t 		not null,
+    pack_id 		uid_t 		not null,
+    price 		currency_t 	not null,
+    b_date 		date_t 		not null,
+    e_date 		date_t 		not null,
+    promo 		bool_t 		null,
+    primary key (distr_id, account_id, prod_id, b_date)
 );
 
 create table group_prices (
@@ -343,6 +350,11 @@ create table highlights (
     primary key (account_id, prod_id)
 );
 
+
+create table job_titles (
+    job_title_id 	uid_t 		not null primary key,
+    descr 		descr_t 	not null
+);
 create table manufacturers (
     manuf_id 		uid_t 		not null primary key,
     descr 		descr_t 	not null,
@@ -506,17 +518,6 @@ create table products (
     novelty 		bool_t 		null,
     promo 		bool_t 		null,
     country_ids 	countries_t 	null
-);
-
-create table promo_prices (
-    distr_id 		uid_t 		not null,
-    account_id 		uid_t 		not null,
-    prod_id 		uid_t 		not null,
-    pack_id 		uid_t 		not null,
-    price 		currency_t 	not null,
-    b_date 		date_t 		not null,
-    e_date 		date_t 		not null,
-    primary key (distr_id, account_id, prod_id, b_date)
 );
 
 create table rating_criterias (

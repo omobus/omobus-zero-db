@@ -51,6 +51,7 @@
 <xi:include href="../queries/e2o/distributors.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/e2o/erp_docs.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/e2o/erp_products.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/e2o/floating_prices.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/e2o/group_prices.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/e2o/highlights.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/e2o/job_titles.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
@@ -77,7 +78,6 @@
 <xi:include href="../queries/e2o/plu_codes.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/e2o/potentials.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/e2o/products.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
-<xi:include href="../queries/e2o/promo_prices.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/e2o/rating_criterias.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/e2o/rating_scores.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/e2o/receipt_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
@@ -136,6 +136,7 @@
     <distributors />
     <erp_docs />
     <erp_products />
+    <floating_prices />
     <group_prices />
     <highlights />
     <job_titles />
@@ -162,7 +163,6 @@
     <plu_codes />
     <potentials />
     <products />
-    <promo_prices />
     <rating_criterias />
     <rating_scores />
     <receipt_types />

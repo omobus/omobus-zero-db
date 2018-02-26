@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<promo_prices templ="%distr_id%;%account_id%;%prod_id%;%pack_id%;%price%;%b_date%;%e_date%;">
-  <![CDATA[
-select distr_id, account_id, prod_id, pack_id, price, b_date, e_date from promo_prices
-    order by 1, 2, 3, b_date
-  ]]>
-</promo_prices>
