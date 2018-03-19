@@ -692,7 +692,8 @@ create table users (
     agency_id 		uid_t 		null,
     shared 		bool_t 		not null default 0,
     mobile 		phone_t 	null,
-    email 		email_t 	null
+    email 		email_t 	null,
+    area 		descr_t 	null
 );
 
 create table vf_accounts (
@@ -864,12 +865,6 @@ go
 
 
 -- **** System tables and procedures ****
-
-create table TTD (
-    doc_id 		uid_t 		not null primary key,
-    erp_id 		uid_t 		null, -- exported to the ERP
-    inserted_ts 	ts_t 		not null default current_timestamp
-);
 
 create table sysparams (
     param_id 		uid_t 		not null primary key,
