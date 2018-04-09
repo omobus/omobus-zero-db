@@ -104,7 +104,6 @@
 <xi:include href="../queries/e2o/vf_products.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/e2o/wareh_stocks.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/e2o/warehouses.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
-<xi:include href="../queries/e2o/warnings.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/e2o/working_hours.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 </queries>
 <pack>
@@ -189,7 +188,6 @@
     <vf_products />
     <wareh_stocks />
     <warehouses />
-    <warnings />
     <working_hours />
 </pack>
 </kernel>

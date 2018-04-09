@@ -732,15 +732,6 @@ create table wareh_stocks (
     primary key (distr_id, wareh_id, prod_id)
 );
 
-create table warnings (
-    distr_id 		uid_t 		not null,
-    account_id 		uid_t 		not null,
-    doc_type 		doctype_t 	not null, -- order, reclamation
-    locked 		bool_t 		not null default 1,
-    msg 		note_t 		null,
-    primary key (distr_id, account_id, doc_type)
-);
-
 create table working_hours (
     working_hours_id 	uid_t 		not null primary key,
     descr 		descr_t 	not null
