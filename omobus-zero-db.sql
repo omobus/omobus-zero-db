@@ -510,10 +510,10 @@ create table products (
     manuf_id 		uid_t 		null,
     brand_id 		uid_t 		null,
     categ_id 		uid_t 		null,
+    shelf_life_id 	uid_t 		null,
     code 		code_t 		null,
     descr 		descr_t 	not null,
     art 		art_t 		null,
-    shelf_life 		descr_t 	null,
     obsolete 		bool_t 		null,
     novelty 		bool_t 		null,
     promo 		bool_t 		null,
@@ -623,6 +623,11 @@ create table sales_targets (
 
 create table service_types (
     service_type_id 	uid_t 		not null primary key,
+    descr 		descr_t 	not null
+);
+
+create table shelf_lifes (
+    shelf_life_id 	uid_t 		not null primary key,
     descr 		descr_t 	not null
 );
 
