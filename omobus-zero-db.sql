@@ -171,7 +171,17 @@ create table audit_criterias ( /* Service-Level-Agreement criterias for the audi
     descr 		descr_t 	not null,
     wf 			wf_t 		not null check(wf between 0.01 and 1.00),
     mandatory 		bool_t 		not null,
+    extra_info 		note_t 		null,
     row_no 		int32_t 	null -- ordering
+);
+
+create table audit_scores (
+    audit_score_id 	uid_t 		not null primary key,
+    descr 		descr_t 	not null,
+    score 		int32_t 	not null,
+    wf 			wf_t 		not null check(wf between 0.00 and 1.00),
+    mandatory 		bool_t 		not null,
+    row_no 		int32_t 	null
 );
 
 create table auto_orders (
@@ -527,9 +537,9 @@ create table rating_criterias (
     descr 		descr_t 	not null,
     wf 			wf_t 		not null check(wf between 0.01 and 1.00),
     mandatory 		bool_t 		not null,
+    extra_info 		note_t 		null,
     row_no 		int32_t 	null
-)
-go
+);
 
 create table rating_scores (
     rating_score_id 	uid_t 		not null primary key,
@@ -678,6 +688,26 @@ create table targets (
     e_date 		date_t 		not null,
     dep_id 		uid_t 		null,
     account_ids 	uids_t 		not null
+);
+
+create table testing_criterias (
+    testing_criteria_id uid_t 		not null primary key,
+    pid 		uid_t 		null,
+    ftype 		bool_t 		not null,
+    descr 		descr_t 	not null,
+    wf 			wf_t 		not null check(wf between 0.01 and 1.00),
+    mandatory 		bool_t 		not null,
+    extra_info 		note_t 		null,
+    row_no 		int32_t 	null
+);
+
+create table testing_scores (
+    testing_score_id 	uid_t 		not null primary key,
+    descr 		descr_t 	not null,
+    score 		int32_t 	not null,
+    wf 			wf_t 		not null check(wf between 0.00 and 1.00),
+    mandatory 		bool_t 		not null,
+    row_no 		int32_t 	null
 );
 
 create table unsched_types (

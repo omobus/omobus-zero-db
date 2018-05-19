@@ -32,6 +32,7 @@
 <xi:include href="../queries/e2o/agreements.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/e2o/attributes.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/e2o/audit_criterias.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/e2o/audit_scores.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/e2o/auto_orders.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/e2o/blacklist.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/e2o/brands.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
@@ -98,6 +99,8 @@
 <xi:include href="../queries/e2o/symlinks.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/e2o/target_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/e2o/targets.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/e2o/testing_criterias.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/e2o/testing_scores.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/e2o/unsched_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/e2o/users.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/e2o/vf_accounts.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
@@ -117,6 +120,7 @@
     <agreements />
     <attributes />
     <audit_criterias />
+    <audit_scores />
     <auto_orders />
     <blacklist />
     <brands />
@@ -183,6 +187,8 @@
     <symlinks />
     <target_types />
     <targets />
+    <testing_criterias />
+    <testing_scores />
     <unsched_types />
     <users />
     <vf_accounts />
