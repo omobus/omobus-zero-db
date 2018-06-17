@@ -513,6 +513,20 @@ create table placements (
     row_no 		int32_t 	null -- ordering
 );
 
+create table plu_codes (
+    account_id 		uid_t 		not null,
+    prod_id 		uid_t 		not null,
+    plu 		code_t 		not null,
+    primary key(account_id, prod_id)
+);
+
+create table pmlist (
+    account_id 		uid_t 		not null,
+    prod_id 		uid_t 		not null,
+    rrp 		currency_t 	null,
+    primary key(account_id, prod_id)
+);
+
 create table products (
     prod_id 		uid_t 		not null primary key,
     pid 		uid_t 		null,
