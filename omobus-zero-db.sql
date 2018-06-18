@@ -391,6 +391,12 @@ create table my_accounts (
     primary key (user_id, account_id)
 );
 
+create table my_cities (
+    user_id 		uid_t 		not null,
+    city_id 		uid_t 		not null,
+    primary key (user_id, city_id)
+);
+
 create table my_regions (
     user_id 		uid_t 		not null,
     region_id 		uid_t 		not null,
@@ -615,6 +621,7 @@ create table restrictions (
 
 create table retail_chains (
     rc_id 		uid_t 		not null primary key,
+    pid 		uid_t 		null,
     descr 		descr_t 	not null,
     ka_code 		code_t 		null, /* Key Account: NKA, KA, ... */
     country_id 		country_t 	null
@@ -652,7 +659,8 @@ create table service_types (
 
 create table shelf_lifes (
     shelf_life_id 	uid_t 		not null primary key,
-    descr 		descr_t 	not null
+    descr 		descr_t 	not null,
+    days 		int32_t 	null
 );
 
 create table shelfs ( /* distribution of brands on the shelf in the category */
@@ -725,7 +733,7 @@ create table testing_scores (
 );
 
 create table unsched_types (
-    target_type_id 	uid_t 		not null primary key,
+    unsched_type_id 	uid_t 		not null primary key,
     descr 		descr_t 	not null,
     row_no 		int32_t 	null -- ordering,
 );

@@ -4,7 +4,7 @@
 select 
     x.distr_id, x.erp_id, x.account_id, x.delivery_date, x.prod_id, x.pack_id, x.qty, x.min_qty, x.max_qty
 from auto_orders x, accounts a, products p
-where x.account_id = a.account_id and x.prod_id = p.prod_id and x.delivery_date > current_date::date_t
+where x.account_id = a.account_id and x.prod_id = p.prod_id and x.delivery_date > /*current_date::date_t*/ convert(varchar(19), getdate(), 121)
 order by a.descr, a.address, x.delivery_date, p.descr, x.erp_id
   ]]>
 </auto_orders>
