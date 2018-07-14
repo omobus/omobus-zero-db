@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<target_types templ="%target_type_id%;%descr%;">
+<begin>
+  <![CDATA[
+update target_types set hidden=1
+    where hidden = 0
+  ]]>
+</begin>
+<check_exist>
+  <![CDATA[
+select count(*) exist from target_types 
+    where target_type_id = '%target_type_id%'
+  ]]>
+</check_exist>
+<update>
+  <![CDATA[
+update target_types set descr='%descr%', hidden=0 
+    where target_type_id = '%target_type_id%'
+  ]]>
+</update>
+<insert>
+  <![CDATA[
+insert into target_types (target_type_id, descr, hidden) 
+    values ('%target_type_id%', '%descr%', 0)
+  ]]>
+</insert>
+</target_types>

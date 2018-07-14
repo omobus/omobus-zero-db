@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<activity_types templ="%activity_type_id%;%descr%;%strict%;">
+<begin>
+  <![CDATA[
+update activity_types set hidden=1
+    where hidden = 0
+  ]]>
+</begin>
+<check_exist>
+  <![CDATA[
+select count(*) exist from activity_types 
+    where activity_type_id = '%activity_type_id%'
+  ]]>
+</check_exist>
+<update>
+  <![CDATA[
+update activity_types set descr='%descr%', strict=0%strict%, hidden=0
+    where activity_type_id = '%activity_type_id%'
+  ]]>
+</update>
+<insert>
+  <![CDATA[
+insert into activity_types (activity_type_id, descr, strict, hidden) 
+    values ('%activity_type_id%', '%descr%', 0%strict%, 0)
+  ]]>
+</insert>
+</activity_types>

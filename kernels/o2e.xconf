@@ -20,10 +20,11 @@
     pack.gc="4"
     cache="o2e/"
     >
-<xi:include href="../queries/gateway:angel/additions.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
-<xi:include href="../queries/gateway:angel/adjustments.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
-<xi:include href="../queries/gateway:angel/orders.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
-<xi:include href="../queries/gateway:angel/receipts.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
-<xi:include href="../queries/gateway:angel/reclamations.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
-<xi:include href="../queries/gateway:angel/trig_after.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/o2e/activity_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/o2e/additions.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/o2e/adjustments.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/o2e/orders.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/o2e/receipts.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/o2e/reclamations.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/o2e/target_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 </kernel>
