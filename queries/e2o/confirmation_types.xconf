@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<confirmation_types templ="%confirm_id%;%descr%;%target_type_ids%;%min_note_length%;%photo_needed%;%accomplished%;">
-  <![CDATA[
-select confirm_id, descr, target_type_ids, min_note_length, photo_needed, accomplished from confirmation_types
-    order by 1
-  ]]>
-</confirmation_types>
