@@ -129,7 +129,6 @@
     <cities />
     <comment_types />
     <conference_themes />
-    <confirmation_types />
     <constants />
     <debts />
     <delivery_types />
@@ -184,7 +183,6 @@
     <shipments />
     <std_prices />
     <symlinks />
-    <target_types />
     <targets />
     <testing_criterias />
     <testing_scores />

@@ -252,15 +252,6 @@ create table conference_themes (
     descr 		descr_t 	not null
 );
 
-create table confirmation_types (
-    confirm_id 		uid_t 		not null primary key,
-    descr 		descr_t 	not null,
-    target_type_ids 	uids_t 		not null,
-    min_note_length 	int32_t 	null,
-    photo_needed 	bool_t 		null,
-    accomplished 	bool_t 		null
-);
-
 create table constants (
     distr_id 		uid_t 		not null,
     const_id 		uid_t 		not null, -- mutuals:date, debts:date, wareh_stocks:date
@@ -413,10 +404,11 @@ create table my_retail_chains (
 create table my_routes (
     user_id 		uid_t 		not null,
     account_id 		uid_t 		not null,
+    activity_type_id 	uid_t 		not null,
     p_date 		date_t 		not null,
     row_no 		int32_t 	null,
     duration 		int32_t 	null,
-    primary key (user_id, account_id, p_date)
+    primary key (user_id, account_id, activity_type_id, p_date)
 );
 
 create table mutuals (
@@ -483,7 +475,8 @@ create table packs (
 create table payment_methods (
     payment_method_id 	uid_t 		not null primary key,
     descr 		descr_t 	not null,
-    encashment 		bool_t 		null
+    encashment 		bool_t 		null,
+    row_no 		int32_t 	null -- ordering,
 );
 
 create table pending_types (
@@ -695,12 +688,6 @@ create table symlinks ( /* distribution of brands on the shelf in the category *
     primary key(distr_id, obj_code, f_id)
 );
 
-create table target_types (
-    target_type_id 	uid_t 		not null primary key,
-    descr 		descr_t 	not null,
-    row_no 		int32_t 	null -- ordering,
-);
-
 create table targets (
     target_id 		uid_t 		not null primary key,
     target_type_id 	uid_t 		not null,
@@ -798,6 +785,13 @@ go
 
 
 -- **** OMOBUS -> ERP streams ****
+
+create table activity_types (
+    activity_type_id 	uid_t 		not null primary key,
+    descr 		descr_t 	not null,
+    strict 		bool_t 		not null default 0, /* sets to 1 (true) for direct visits to the accounts */
+    hidden 		bool_t 		not null default 0
+);
 
 create table additions (
     doc_id 		uid_t 		not null primary key,
@@ -906,6 +900,12 @@ create table reclamations (
     volume 		volume_t 	not null,
     inserted_ts 	ts_t 		not null default current_timestamp,
     primary key (doc_id, prod_id)
+);
+
+create table target_types (
+    target_type_id 	uid_t 		not null primary key,
+    descr 		descr_t 	not null,
+    hidden 		bool_t 		not null default 0
 );
 
 go
