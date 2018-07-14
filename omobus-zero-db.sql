@@ -180,7 +180,6 @@ create table audit_scores (
     descr 		descr_t 	not null,
     score 		int32_t 	not null,
     wf 			wf_t 		not null check(wf between 0.00 and 1.00),
-    mandatory 		bool_t 		not null,
     row_no 		int32_t 	null
 );
 
@@ -351,11 +350,11 @@ create table highlights (
     primary key (account_id, prod_id)
 );
 
-
 create table job_titles (
     job_title_id 	uid_t 		not null primary key,
     descr 		descr_t 	not null
 );
+
 create table manufacturers (
     manuf_id 		uid_t 		not null primary key,
     descr 		descr_t 	not null,
@@ -559,7 +558,6 @@ create table rating_scores (
     descr 		descr_t 	not null,
     score 		int32_t 	not null,
     wf 			wf_t 		not null check(wf between 0.00 and 1.00),
-    mandatory 		bool_t 		not null,
     row_no 		int32_t 	null
 );
 
@@ -715,7 +713,6 @@ create table testing_scores (
     descr 		descr_t 	not null,
     score 		int32_t 	not null,
     wf 			wf_t 		not null check(wf between 0.00 and 1.00),
-    mandatory 		bool_t 		not null,
     row_no 		int32_t 	null
 );
 
