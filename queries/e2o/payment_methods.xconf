@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<payment_methods templ="%payment_method_id%;%descr%;%encashment%;">
-  <![CDATA[ 
-select payment_method_id, descr, encashment from payment_methods
+<payment_methods templ="%payment_method_id%;%descr%;%encashment%;%row_no%;">
+  <![CDATA[
+select payment_method_id, descr, encashment, row_no from payment_methods
     order by 1
   ]]>
 </payment_methods>
