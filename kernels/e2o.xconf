@@ -43,12 +43,15 @@
 <xi:include href="../queries/e2o/comment_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/e2o/conference_themes.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/e2o/constants.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/e2o/contacts.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/e2o/debts.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/e2o/delivery_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/e2o/departments.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/e2o/discard_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/e2o/discounts.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/e2o/distributors.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/e2o/equipment_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/e2o/equipments.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/e2o/erp_docs.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/e2o/erp_products.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/e2o/floating_prices.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
@@ -69,6 +72,7 @@
 <xi:include href="../queries/e2o/oos_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/e2o/order_params.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/e2o/order_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/e2o/ownership_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/e2o/packs.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/e2o/payment_methods.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/e2o/pending_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
@@ -130,12 +134,15 @@
     <comment_types />
     <conference_themes />
     <constants />
+    <contacts />
     <debts />
     <delivery_types />
     <departments />
     <discard_types />
     <discounts />
     <distributors />
+    <equipment_types />
+    <equipments />
     <erp_docs />
     <erp_products />
     <floating_prices />
@@ -156,6 +163,7 @@
     <oos_types />
     <order_params />
     <order_types />
+    <ownership_types />
     <packs />
     <payment_methods />
     <pending_types />

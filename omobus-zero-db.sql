@@ -258,6 +258,20 @@ create table constants (
     primary key(distr_id, const_id)
 );
 
+create table contacts (
+    contact_id 		uid_t 		not null primary key,
+    account_id 		uid_t 		not null,
+    name 		descr_t 	not null,
+    surname 		descr_t 	not null,
+    patronymic 		descr_t 	null,
+    job_title_id 	uid_t 		not null,
+    phone 		phone_t 	null,
+    mobile 		phone_t 	null,
+    email 		email_t 	null,
+    locked 		bool_t 		not null default 0,
+    extra_info 		note_t 		null
+);
+
 create table debts (
     distr_id 		uid_t 		not null,
     account_id 		uid_t 		not null,
@@ -295,6 +309,21 @@ create table distributors (
     pid 		uid_t 		null,
     descr 		descr_t 	not null,
     country_id 		uid_t 		null
+);
+
+create table equipment_types (
+    equipment_type_id 	uid_t		not null primary key,
+    descr 		descr_t		not null,
+    row_no 		int32_t 	null -- ordering
+);
+
+create table equipments (
+    equipment_id 	uid_t 		not null primary key,
+    account_id 		uid_t 		not null,
+    serial_number 	code_t 		not null,
+    equipment_type_id 	uid_t 		not null,
+    ownership_type_id 	uid_t 		null,
+    extra_info 		note_t 		null
 );
 
 create table erp_docs (
@@ -458,6 +487,12 @@ create table order_types (
     order_type_id 	uid_t 		not null primary key,
     descr 		descr_t 	not null,
     redirect_method 	varchar(16) 	null
+);
+
+create table ownership_types (
+    ownership_type_id 	uid_t		not null primary key,
+    descr 		descr_t		not null,
+    row_no 		int32_t 	null -- ordering
 );
 
 create table packs (
