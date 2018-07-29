@@ -17,7 +17,7 @@
     ftp.tls="no"
     ftp.ccc="no"
     ftp.cdc="no"
-    pack.type="gz"
+    pack.type="txt.gz"
     pack.level="6"
     cache="e2o/"
     diff="yes"

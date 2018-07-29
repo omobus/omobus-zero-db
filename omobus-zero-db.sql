@@ -235,7 +235,8 @@ create table cities (
     pid 		uid_t 		null,
     ftype 		ftype_t 	not null,
     descr 		descr_t 	not null,
-    country_id 		uid_t 		not null
+    country_id 		uid_t 		not null,
+    population 		int32_t 	null
 );
 
 create table comment_types (
