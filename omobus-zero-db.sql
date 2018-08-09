@@ -826,23 +826,6 @@ create table activity_types (
     hidden 		bool_t 		not null default 0
 );
 
-create table additions (
-    doc_id 		uid_t 		not null primary key,
-    fix_dt 		datetime_t 	not null,
-    doc_no 		uid_t 		not null,
-    user_id 		uid_t 		not null,
-    dev_login 		uid_t 		not null,
-    addition_type_id 	uid_t 		null,
-    doc_note 		note_t 		null,
-    account 		descr_t 	not null,
-    legal_address 	address_t 	null,
-    address 		address_t 	null,
-    number 		code_t 		null,
-    attr_ids 		uids_t 		null,
-    account_id 		uid_t 		not null,
-    inserted_ts 	ts_t 		not null default current_timestamp
-);
-
 create table adjustments (
     doc_id 		uid_t 		not null primary key,
     fix_dt 		datetime_t 	not null,

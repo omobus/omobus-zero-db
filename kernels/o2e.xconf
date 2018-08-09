@@ -21,7 +21,6 @@
     cache="o2e/"
     >
 <xi:include href="../queries/o2e/activity_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
-<xi:include href="../queries/o2e/additions.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/o2e/adjustments.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/o2e/orders.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/o2e/receipts.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
