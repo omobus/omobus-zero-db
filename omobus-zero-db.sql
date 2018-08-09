@@ -575,7 +575,8 @@ create table products (
     obsolete 		bool_t 		null,
     novelty 		bool_t 		null,
     promo 		bool_t 		null,
-    country_ids 	countries_t 	null
+    country_ids 	countries_t 	null,
+    "image" 		image 		null
 );
 
 create table rating_criterias (
