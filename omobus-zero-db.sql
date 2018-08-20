@@ -727,11 +727,17 @@ create table targets (
     target_id 		uid_t 		not null primary key,
     target_type_id 	uid_t 		not null,
     subject 		descr_t 	not null,
-    body 		varchar(48) 	not null,
+    body 		varchar(2048) 	not null,
     b_date 		date_t 		not null,
     e_date 		date_t 		not null,
     dep_id 		uid_t 		null,
-    account_ids 	uids_t 		not null
+    account_ids 	uids_t 		null,
+    rc_ids 		uids_t 		null,
+    chan_ids 		uids_t 		null,
+    poten_ids 		uids_t 		null,
+    region_ids 		uids_t 		null,
+    city_ids 		uids_t 		null,
+    attrs 		varchar(1024) 	null
 );
 
 create table testing_criterias (
