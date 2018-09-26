@@ -88,6 +88,7 @@
 <xi:include href="../queries/e2o/receipt_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/e2o/reclamation_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/e2o/recom_orders.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/e2o/recom_retail_prices.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/e2o/refunds.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/e2o/refunds_products.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/e2o/regions.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
@@ -179,6 +180,7 @@
     <receipt_types />
     <reclamation_types />
     <recom_orders />
+    <recom_retail_prices />
     <refunds />
     <refunds_products />
     <regions />

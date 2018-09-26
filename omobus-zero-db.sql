@@ -557,8 +557,9 @@ create table plu_codes (
 create table pmlist (
     account_id 		uid_t 		not null,
     prod_id 		uid_t 		not null,
-    rrp 		currency_t 	null,
-    primary key(account_id, prod_id)
+    b_date 		date_t 		not null,
+    e_date 		date_t 		not null,
+    primary key(account_id, prod_id, b_date)
 );
 
 create table products (
@@ -616,6 +617,13 @@ create table recom_orders (
     qty 		int32_t 	null,
     stock_wf 		wf_t 		null,
     primary key (account_id, prod_id)
+);
+
+create table recom_retail_prices (
+    account_id 		uid_t 		not null,
+    prod_id 		uid_t 		not null,
+    rrp 		currency_t 	not null,
+    primary key(account_id, prod_id)
 );
 
 create table refunds ( /* total account returns percentage */
