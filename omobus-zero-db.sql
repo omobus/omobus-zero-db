@@ -487,7 +487,7 @@ create table order_params (
 create table order_types (
     order_type_id 	uid_t 		not null primary key,
     descr 		descr_t 	not null,
-    redirect_method 	varchar(16) 	null
+    row_no 		int32_t 	null -- ordering
 );
 
 create table ownership_types (

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<order_types templ="%order_type_id%;%descr%;%redirect_method%;">
+<order_types templ="%order_type_id%;%descr%;%row_no%;">
   <![CDATA[
-select order_type_id, descr, redirect_method from order_types
+select order_type_id, descr, row_no from order_types
     order by 1
   ]]>
 </order_types>

@@ -79,6 +79,10 @@ insert into oos_types(oos_type_id, descr, row_no) values('4', 'Продукт н
 insert into oos_types(oos_type_id, descr, row_no) values('5', 'Не выяснил(-а) причину Out-of-Stock', 5);
 insert into oos_types(oos_type_id, descr) values('9', 'ДРУГОЕ');
 
+delete from order_types;
+insert into order_types(order_type_id, descr, row_no) values('0', 'Основной');
+insert into order_types(order_type_id, descr) values('1', 'Бонусный');
+
 delete from payment_methods;
 insert into payment_methods(payment_method_id, descr, row_no) values('0', 'Безналичная оплата', 0);
 insert into payment_methods(payment_method_id, descr, row_no) values('1', 'Оплата наличными', 1);
