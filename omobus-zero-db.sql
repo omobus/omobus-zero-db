@@ -116,9 +116,7 @@ create table accounts (
     poten_id 		uid_t 		null,
     rc_id 		uid_t 		null, /* -> retail_chains */
     region_id 		uid_t 		null,
-    city_id 		uid_t 		null,
-    class 		varchar(10) 	null check (class in ('outlet','pharmacy','hospital','conference') and class=lower(class))
-    --locked 		bool_t 		null
+    city_id 		uid_t 		null
 );
 
 create table account_params (
