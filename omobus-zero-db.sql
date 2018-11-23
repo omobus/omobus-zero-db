@@ -679,17 +679,6 @@ create table sales_history (
     primary key (account_id, prod_id, s_date)
 );
 
-create table sales_targets (
-    account_id 		uid_t 		not null,
-    prod_id 		uid_t 		not null,
-    year 		int32_t 	not null,
-    month 		int32_t 	not null,
-    pack_id 		uid_t 		null,
-    qty 		int32_t 	null,
-    amount 		currency_t 	null,
-    primary key (account_id, prod_id, year, month)
-);
-
 create table service_types (
     service_type_id 	uid_t 		not null primary key,
     descr 		descr_t 	not null

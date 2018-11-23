@@ -13,8 +13,8 @@
     ftp.connect_timeout="10"
     ftp.recv_timeout="5"
     ftp.send_timeout="5"
-    ftp.epsv="true"
-    ftp.tls="no"
+    ftp.epsv="yes"
+    ftp.tls="yes"
     ftp.ccc="no"
     ftp.cdc="no"
     pack.type="txt.gz"
@@ -95,7 +95,6 @@
 <xi:include href="../queries/e2o/restrictions.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/e2o/retail_chains.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/e2o/sales_history.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
-<xi:include href="../queries/e2o/sales_targets.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/e2o/service_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/e2o/shelf_lifes.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/e2o/shelfs.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
@@ -187,7 +186,6 @@
     <restrictions />
     <retail_chains />
     <sales_history />
-    <sales_targets />
     <service_types />
     <shelf_lifes />
     <shelfs />
