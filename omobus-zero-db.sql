@@ -575,6 +575,7 @@ create table products (
     novelty 		bool_t 		null,
     promo 		bool_t 		null,
     country_ids 	countries_t 	null,
+    rc_id 		uid_t 		null,
     barcodes 		codes_t 	null,
     "image" 		image 		null,
     row_no 		int32_t 	null
