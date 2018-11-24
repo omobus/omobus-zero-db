@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<products templ="%prod_id%;%pid%;%ftype%;%code%;%descr%;%manuf_id%;%brand_id%;%categ_id%;%shelf_life_id%;%art%;%obsolete%;%novelty%;%promo%;%country_ids%;%rc_id%;%barcodes%;%image%;%row_no%;">
+<products templ="%prod_id%;%pid%;%ftype%;%code%;%descr%;%manuf_id%;%brand_id%;%categ_id%;%shelf_life_id%;%art%;%obsolete%;%novelty%;%promo%;%barcodes%;%country_ids%;%rc_id%;%image%;%row_no%;">
   <![CDATA[ 
-select prod_id, pid, ftype, descr, code, art, manuf_id, brand_id, categ_id, shelf_life_id, novelty, promo, obsolete, country_ids, rc_id, barcodes, "image", row_no from products
+select prod_id, pid, ftype, descr, code, art, manuf_id, brand_id, categ_id, shelf_life_id, novelty, promo, obsolete, barcodes, country_ids, rc_id, "image", row_no from products
     order by 1
   ]]>
 </products>
