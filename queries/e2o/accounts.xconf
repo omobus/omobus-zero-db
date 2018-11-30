@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<accounts templ="%account_id%;%pid%;%ftype%;%code%;%descr%;%address%;%chan_id%;%poten_id%;%rc_id%;%region_id%;%city_id%;">
+<accounts templ="%account_id%;%pid%;%ftype%;%code%;%descr%;%address%;%chan_id%;%poten_id%;%rc_id%;%region_id%;%city_id%;%latitude%;%longitude%;">
   <![CDATA[
-select account_id, pid, ftype, code, descr, address, chan_id, poten_id, rc_id, region_id, city_id from accounts
+select account_id, pid, ftype, code, descr, address, chan_id, poten_id, rc_id, region_id, city_id, latitude, longitude from accounts
     order by 1
   ]]>
 </accounts>
