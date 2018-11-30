@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<users templ="%user_id%;%pids%;%descr%;%role%;%country_ids%;%dep_ids%;%distr_ids%;%agency_id%;%shared%;%mobile%;%email%;%area%;">
+<users templ="%user_id%;%pids%;%descr%;%role%;%country_ids%;%dep_ids%;%distr_ids%;%agency_id%;%mobile%;%email%;%area%;">
   <![CDATA[
-select user_id, pids, descr, role, country_ids, dep_ids, distr_ids, agency_id, shared, mobile, email, area from users
+select user_id, pids, descr, role, country_ids, dep_ids, distr_ids, agency_id, mobile, email, area from users
     order by 1
   ]]>
 </users>
