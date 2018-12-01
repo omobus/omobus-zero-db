@@ -254,8 +254,8 @@ create table conference_themes (
 
 create table constants (
     distr_id 		uid_t 		not null,
-    const_id 		uid_t 		not null, -- mutuals:date, debts:date, wareh_stocks:date
-    value 		varchar(64) 	not null,
+    const_id 		uid_t 		not null,
+    "value" 		date_t 		not null,
     primary key(distr_id, const_id)
 );
 
