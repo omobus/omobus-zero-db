@@ -1,13 +1,13 @@
 [Unit]
-Description=OMOBUS zero service (o2e)
+Description=OMOBUS zero service (data)
 After=local-fs.target network.target
 
 [Service]
 #Type=forking
-PIDFile=/var/run/omobus.d/omobus-o2e.pid
+PIDFile=/var/run/omobus.d/omobus-data.pid
 ExecStartPre=/bin/mkdir -m 0755 -p /var/run/omobus.d
 ExecStartPre=/bin/chown omobus:omobus /var/run/omobus.d
-ExecStart=/usr/local/sbin/omobusd o2e -x -u omobus -g omobus -p /var/run/omobus.d/omobus-o2e.pid
+ExecStart=/usr/local/sbin/omobusd data -x -u omobus -g omobus -p /var/run/omobus.d/omobus-data.pid
 ExecStop=/bin/kill -s USR1 $MAINPID
 
 [Install]
