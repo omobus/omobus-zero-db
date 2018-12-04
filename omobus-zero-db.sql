@@ -125,7 +125,6 @@ create table account_params (
     distr_id 		uid_t 		not null,
     account_id 		uid_t 		not null,
     group_price_id 	uid_t 		null,
-    locked 		bool_t 		null,
     payment_delay 	int32_t 	null,
     payment_method_id 	uid_t 		null,
     wareh_ids 		uids_t 		null,
@@ -335,7 +334,7 @@ create table erp_docs (
     erp_dt 		datetime_t 	not null,
     amount 		currency_t 	not null,
     status 		int32_t 	not null default 0 check (status between -1 and 1), -- -1 - delete, 0 - normal, 1 - closed
-    doc_type 		doctype_t 	not null, -- order, reclamation, contract, shipment, return, movement
+    doc_type 		doctype_t 	not null, -- order, reclamation, contract
     primary key (doc_id, erp_id)
 );
 
