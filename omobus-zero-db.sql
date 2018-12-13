@@ -534,9 +534,17 @@ create table potentials (
     descr 		descr_t 	not null
 );
 
+create table photo_params (
+    photo_param_id 	uid_t 		not null primary key,
+    descr 		descr_t 	not null,
+    placement_ids 	uids_t 		null,
+    row_no 		int32_t 	null -- ordering,
+);
+
 create table photo_types (
     photo_type_id 	uid_t 		not null primary key,
     descr 		descr_t 	not null,
+    placement_ids 	uids_t 		null,
     row_no 		int32_t 	null -- ordering,
 );
 
