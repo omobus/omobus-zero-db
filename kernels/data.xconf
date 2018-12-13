@@ -77,6 +77,7 @@
 <xi:include href="../queries/data/payment_methods.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/pending_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/permitted_returns.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/data/photo_params.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/photo_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/placements.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/plu_codes.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
@@ -168,6 +169,7 @@
     <payment_methods />
     <pending_types />
     <permitted_returns />
+    <photo_params />
     <photo_types />
     <placements />
     <plu_codes />
