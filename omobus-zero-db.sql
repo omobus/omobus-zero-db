@@ -1,5 +1,5 @@
 /* This file is a part of the omobus-zero-db project.
- * Copyright (c) 2006 - 2018 ak-obs, Ltd. <info@omobus.net>.
+ * Copyright (c) 2006 - 2019 ak-obs, Ltd. <info@omobus.net>.
  * All rights reserved.
  *
  * This program is a free software. Redistribution and use in source
@@ -951,5 +951,6 @@ create table sysparams (
 
 insert into sysparams values('db:id', 'L0', 'omobus-zero-db internal code.');
 insert into sysparams values('gc:keep_alive', '30', 'How many days the data will be hold from cleaning.');
+insert into sysparams values('db:vstamp', '', 'Database version number.');
 
 go
