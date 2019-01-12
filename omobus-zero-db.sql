@@ -105,6 +105,13 @@ go
 
 -- **** ERP -> OMOBUS streams ****
 
+create table "RDD" (
+    distr_id 		uid_t 		not null,
+    obj_code 		code_t 		not null,
+    r_date 		datetimetz_t 	not null,
+    primary key(distr_id, obj_code)
+);
+
 create table accounts (
     account_id 		uid_t 		not null primary key,
     pid 		uid_t 		null,
@@ -249,13 +256,6 @@ create table comment_types (
 create table conference_themes (
     ctheme_id 		uid_t 		not null primary key,
     descr 		descr_t 	not null
-);
-
-create table constants (
-    distr_id 		uid_t 		not null,
-    const_id 		uid_t 		not null,
-    "value" 		date_t 		not null,
-    primary key(distr_id, const_id)
 );
 
 create table contacts (

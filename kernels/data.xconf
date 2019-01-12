@@ -23,6 +23,7 @@
     diff="yes"
     >
 <queries>
+<xi:include href="../queries/data/RDD.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/TTD.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/account_params.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/account_prices.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
@@ -42,7 +43,6 @@
 <xi:include href="../queries/data/cities.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/comment_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/conference_themes.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
-<xi:include href="../queries/data/constants.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/contacts.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/debts.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/delivery_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
@@ -115,6 +115,7 @@
 <xi:include href="../queries/data/working_hours.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 </queries>
 <pack>
+    <RDD />
     <TTD />
     <account_params />
     <account_prices />
@@ -134,7 +135,6 @@
     <cities />
     <comment_types />
     <conference_themes />
-    <constants />
     <contacts />
     <debts />
     <delivery_types />
