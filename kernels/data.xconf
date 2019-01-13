@@ -34,7 +34,6 @@
 <xi:include href="../queries/data/attributes.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/audit_criterias.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/audit_scores.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
-<xi:include href="../queries/data/auto_orders.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/blacklist.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/brands.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/canceling_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
@@ -126,7 +125,6 @@
     <attributes />
     <audit_criterias />
     <audit_scores />
-    <auto_orders />
     <blacklist />
     <brands />
     <canceling_types />
