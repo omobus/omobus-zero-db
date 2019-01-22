@@ -105,13 +105,6 @@ go
 
 -- **** ERP -> OMOBUS streams ****
 
-create table "RDD" (
-    distr_id 		uid_t 		not null,
-    obj_code 		code_t 		not null,
-    r_date 		datetimetz_t 	not null,
-    primary key(distr_id, obj_code)
-);
-
 create table accounts (
     account_id 		uid_t 		not null primary key,
     pid 		uid_t 		null,
@@ -594,6 +587,13 @@ create table rating_scores (
     score 		int32_t 	not null,
     wf 			wf_t 		not null check(wf between 0.00 and 1.00),
     row_no 		int32_t 	null
+);
+
+create table rdd (
+    distr_id 		uid_t 		not null,
+    obj_code 		code_t 		not null,
+    r_date 		datetimetz_t 	not null,
+    primary key(distr_id, obj_code)
 );
 
 create table receipt_types (
