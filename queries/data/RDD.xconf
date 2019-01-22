@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<rdd templ="%distr_id%;%obj_code%;%r_date%;">
-  <![CDATA[
-select distr_id, obj_code, r_date from rdd
-    order by 1
-  ]]> 
-</rdd>
