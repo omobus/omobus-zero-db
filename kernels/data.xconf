@@ -32,6 +32,7 @@
 <xi:include href="../queries/data/agreements.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/attributes.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/audit_criterias.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/data/audit_params.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/audit_scores.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/blacklist.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/brands.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
@@ -56,6 +57,7 @@
 <xi:include href="../queries/data/group_prices.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/highlights.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/job_titles.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/data/kinds.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/manufacturers.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/matrices.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/matrix_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
@@ -97,8 +99,8 @@
 <xi:include href="../queries/data/sales_history.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/service_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/shelf_lifes.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
-<xi:include href="../queries/data/shelfs.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/shipments.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/data/smlist.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/std_prices.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/symlinks.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/targets.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
@@ -123,6 +125,7 @@
     <agreements />
     <attributes />
     <audit_criterias />
+    <audit_params />
     <audit_scores />
     <blacklist />
     <brands />
@@ -147,6 +150,7 @@
     <group_prices />
     <highlights />
     <job_titles />
+    <kinds />
     <manufacturers />
     <matrices />
     <matrix_types />
@@ -188,8 +192,8 @@
     <sales_history />
     <service_types />
     <shelf_lifes />
-    <shelfs />
     <shipments />
+    <smlist />
     <std_prices />
     <symlinks />
     <targets />

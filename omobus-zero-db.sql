@@ -165,13 +165,20 @@ create table attributes (
     descr 		descr_t 	not null
 );
 
-create table audit_criterias ( /* Service-Level-Agreement criterias for the audit document */
+create table audit_criterias (
     audit_criteria_id 	uid_t 		not null primary key,
     descr 		descr_t 	not null,
     wf 			wf_t 		not null check(wf between 0.01 and 1.00),
     mandatory 		bool_t 		not null,
     extra_info 		note_t 		null,
     row_no 		int32_t 	null -- ordering
+);
+
+create table audit_params (
+    account_id 		uid_t 		not null,
+    categ_id 		uid_t 		not null,
+    wf 			wf_t 		not null check(wf between 0.01 and 1.00),
+    primary key (account_id, categ_id)
 );
 
 create table audit_scores (
@@ -193,9 +200,8 @@ create table blacklist (
 create table brands (
     brand_id 		uid_t 		not null primary key,
     descr 		descr_t 	not null,
+    manuf_id 		uid_t 		not null,
     dep_id 		uid_t 		null,
-    multi 		uids_t 		null, /* for compound brands: [multi] should contains [brand_id] array */
-    competitor 		bool_t 		null,
     row_no 		int32_t 	null
 );
 
@@ -207,7 +213,6 @@ create table canceling_types (
 create table categories (
     categ_id 		uid_t 		not null primary key,
     descr 		descr_t 	not null,
-    wf 			wf_t 		null check(wf between 0.01 and 1.00), /* Service-Level-Agreement weight for the audit document */
     row_no 		int32_t 	null -- ordering
 );
 
@@ -364,6 +369,12 @@ create table job_titles (
     descr 		descr_t 	not null
 );
 
+create table kinds (
+    kind_id 		uid_t 		not null primary key,
+    descr 		descr_t 	not null,
+    row_no 		int32_t 	null -- ordering
+);
+
 create table manufacturers (
     manuf_id 		uid_t 		not null primary key,
     descr 		descr_t 	not null,
@@ -378,10 +389,11 @@ create table matrix_types (
 
 create table matrices (
     account_id 		uid_t 		not null,
+    placement_id 	uid_t 		not null,
     prod_id 		uid_t 		not null,
     matrix_type_id 	uid_t 		not null,
     row_no 		int32_t 	null, -- ordering
-    primary key (account_id, prod_id, matrix_type_id)
+    primary key (account_id, placement_id, prod_id, matrix_type_id)
 );
 
 create table my_accounts (
@@ -553,20 +565,19 @@ create table products (
     prod_id 		uid_t 		not null primary key,
     pid 		uid_t 		null,
     ftype 		ftype_t 	not null,
-    manuf_id 		uid_t 		null,
+    code 		code_t 		null,
+    descr 		descr_t 	not null,
+    kind_id 		uid_t 		null,
     brand_id 		uid_t 		null,
     categ_id 		uid_t 		null,
     shelf_life_id 	uid_t 		null,
-    code 		code_t 		null,
-    descr 		descr_t 	not null,
     art 		art_t 		null,
     obsolete 		bool_t 		null,
     novelty 		bool_t 		null,
     promo 		bool_t 		null,
-    country_ids 	countries_t 	null,
-    rc_id 		uid_t 		null,
     barcodes 		codes_t 	null,
     "image" 		image 		null,
+    country_ids 	countries_t 	null,
     row_no 		int32_t 	null
 );
 
@@ -685,19 +696,20 @@ create table shelf_lifes (
     days 		int32_t 	null
 );
 
-create table shelfs ( /* distribution of brands on the shelf in the category */
-    account_id 		uid_t 		not null,
-    categ_id 		uid_t 		not null,
-    brand_ids 		uids_t 		not null,
-    target 		wf_t 		null check(target between 0.01 and 1.00), /* Share-of-Shelf recomendations */
-    primary key(account_id, categ_id)
-);
-
 create table shipments (
     distr_id 		uid_t 		not null,
     account_id 		uid_t 		not null,
     d_date 		date_t 		not null,
     primary key (distr_id, account_id, d_date)
+);
+
+create table smlist (
+    account_id 		uid_t 		not null,
+    categ_id 		uid_t 		not null,
+    brand_ids 		uids_t 		not null,
+    sos_target 		wf_t 		null check(target between 0.01 and 1.00),
+    soa_target 		wf_t 		null check(target between 0.01 and 1.00),
+    primary key(account_id, categ_id)
 );
 
 create table std_prices (

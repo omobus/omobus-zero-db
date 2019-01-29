@@ -2,6 +2,6 @@
 <mutuals_history templ="%distr_id%;%account_id%;%erp_id%;%erp_no%;%erp_dt%;%amount%;%incoming%;%unpaid%;%extra_info%;">
   <![CDATA[
 select distr_id, account_id, erp_id, erp_no, erp_dt, amount, incoming, unpaid, extra_info from mutuals_history
-    order by 1, 2, 5 desc
+    order by 1, 2, 5 desc, 3
   ]]>
 </mutuals_history>

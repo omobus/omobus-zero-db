@@ -2,6 +2,6 @@
 <mutuals_history_products templ="%distr_id%;%erp_id%;%prod_id%;%pack_id%;%qty%;%discount%;%amount%;">
   <![CDATA[ 
 select distr_id, erp_id, prod_id, pack_id, qty, amount, discount from mutuals_history_products
-    order by 1, 2
+    order by 1, 2, 3
   ]]>
 </mutuals_history_products>
