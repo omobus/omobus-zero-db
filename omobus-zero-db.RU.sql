@@ -122,18 +122,9 @@ insert into reclamation_types(reclamation_type_id, descr) values('1', 'Нару�
 insert into reclamation_types(reclamation_type_id, descr) values('2', 'Брак');
 insert into reclamation_types(reclamation_type_id, descr) values('3', 'Истек срок годности');
 
-delete from service_types;
-insert into service_types(service_type_id, descr) values('0', 'Самообслуживание');
-insert into service_types(service_type_id, descr) values('1', 'Через прилавок');
-
 delete from testing_scores;
 insert into testing_scores(testing_score_id, descr, score, wf) values('0', '<b>Оценка: 0 баллов</b> (имеются серьезные недостатки)', 0, 0);
 insert into testing_scores(testing_score_id, descr, score, wf) values('1', '<b>Оценка: 1 балл</b> (имеются незначительные недостатки)', 1, 0.5);
 insert into testing_scores(testing_score_id, descr, score, wf) values('2', '<b>Оценка: 2 балла</b> (недостатки не обнаружены)', 2, 1);
-
-delete from working_hours;
-insert into working_hours(working_hours_id, descr) values('00:00-24:00', 'Круглосуточно');
-insert into working_hours(working_hours_id, descr) values('07:00-21:00', 'с 7:00 до 21:00');
-insert into working_hours(working_hours_id, descr) values('08:00-22:00', 'с 8:00 до 22:00');
 
 go

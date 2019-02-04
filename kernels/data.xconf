@@ -32,7 +32,6 @@
 <xi:include href="../queries/data/agreements.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/attributes.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/audit_criterias.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
-<xi:include href="../queries/data/audit_params.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/audit_scores.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/blacklist.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/brands.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
@@ -91,16 +90,15 @@
 <xi:include href="../queries/data/reclamation_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/recom_orders.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/recom_retail_prices.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/data/recom_shares.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/refunds.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/refunds_products.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/regions.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/restrictions.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/retail_chains.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/sales_history.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
-<xi:include href="../queries/data/service_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/shelf_lifes.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/shipments.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
-<xi:include href="../queries/data/smlist.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/std_prices.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/symlinks.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/targets.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
@@ -113,7 +111,6 @@
 <xi:include href="../queries/data/vf_products.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/wareh_stocks.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/warehouses.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
-<xi:include href="../queries/data/working_hours.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 </queries>
 <pack>
     <TTD />
@@ -125,7 +122,6 @@
     <agreements />
     <attributes />
     <audit_criterias />
-    <audit_params />
     <audit_scores />
     <blacklist />
     <brands />
@@ -184,16 +180,15 @@
     <reclamation_types />
     <recom_orders />
     <recom_retail_prices />
+    <recom_shares />
     <refunds />
     <refunds_products />
     <regions />
     <restrictions />
     <retail_chains />
     <sales_history />
-    <service_types />
     <shelf_lifes />
     <shipments />
-    <smlist />
     <std_prices />
     <symlinks />
     <targets />
@@ -206,6 +201,5 @@
     <vf_products />
     <wareh_stocks />
     <warehouses />
-    <working_hours />
 </pack>
 </kernel>

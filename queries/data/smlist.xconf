@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<smlist templ="%account_id%;%categ_id%;%brand_ids%;%sos_target%;%soa_target%;">
-  <![CDATA[
-select account_id, categ_id, brand_ids, sos_target, soa_targer from smlist
-    order by 1, 2
-  ]]>
-</smlist>

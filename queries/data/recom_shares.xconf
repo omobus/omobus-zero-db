@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<recom_shares templ="%account_id%;%categ_id%;%sos%;%soa%;">
+  <![CDATA[
+select account_id, categ_id, sos, soa from recom_shares
+    order by 1, 2
+  ]]>
+</recom_shares>

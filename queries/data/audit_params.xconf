@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<audit_params templ="%account_id%;%categ_id%;%wf%;">
-  <![CDATA[
-select account_id, categ_id, wf from audit_params
-    order by 1
-  ]]>
-</audit_params>

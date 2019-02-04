@@ -174,13 +174,6 @@ create table audit_criterias (
     row_no 		int32_t 	null -- ordering
 );
 
-create table audit_params (
-    account_id 		uid_t 		not null,
-    categ_id 		uid_t 		not null,
-    wf 			wf_t 		not null check(wf between 0.01 and 1.00),
-    primary key (account_id, categ_id)
-);
-
 create table audit_scores (
     audit_score_id 	uid_t 		not null primary key,
     descr 		descr_t 	not null,
@@ -213,6 +206,8 @@ create table canceling_types (
 create table categories (
     categ_id 		uid_t 		not null primary key,
     descr 		descr_t 	not null,
+    brand_ids 		uids_t 		null,
+    wf 			wf_t 		null check(wf between 0.01 and 1.00),
     row_no 		int32_t 	null -- ordering
 );
 
@@ -633,6 +628,14 @@ create table recom_retail_prices (
     primary key(account_id, prod_id)
 );
 
+create table recom_shares (
+    account_id 		uid_t 		not null,
+    categ_id 		uid_t 		not null,
+    sos 		wf_t 		null check(target between 0.01 and 1.00),
+    soa 		wf_t 		null check(target between 0.01 and 1.00),
+    primary key(account_id, categ_id)
+);
+
 create table refunds ( /* total account returns percentage */
     account_id 		uid_t 		not null primary key,
     percentage 		numeric(7,1) 	not null check(percentage >=0),
@@ -685,11 +688,6 @@ create table sales_history (
     primary key (account_id, prod_id, s_date)
 );
 
-create table service_types (
-    service_type_id 	uid_t 		not null primary key,
-    descr 		descr_t 	not null
-);
-
 create table shelf_lifes (
     shelf_life_id 	uid_t 		not null primary key,
     descr 		descr_t 	not null,
@@ -701,15 +699,6 @@ create table shipments (
     account_id 		uid_t 		not null,
     d_date 		date_t 		not null,
     primary key (distr_id, account_id, d_date)
-);
-
-create table smlist (
-    account_id 		uid_t 		not null,
-    categ_id 		uid_t 		not null,
-    brand_ids 		uids_t 		not null,
-    sos_target 		wf_t 		null check(target between 0.01 and 1.00),
-    soa_target 		wf_t 		null check(target between 0.01 and 1.00),
-    primary key(account_id, categ_id)
 );
 
 create table std_prices (
@@ -819,11 +808,6 @@ create table wareh_stocks (
     prod_id 		uid_t 		not null,
     qty 		int32_t 	not null,
     primary key (distr_id, wareh_id, prod_id)
-);
-
-create table working_hours (
-    working_hours_id 	uid_t 		not null primary key,
-    descr 		descr_t 	not null
 );
 
 go
