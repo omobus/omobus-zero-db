@@ -3,7 +3,7 @@
 # Author: Igor Artemov <i_artemov@ak-obs.ru>.
 
 PACKAGE_NAME 	= omobus-zero-db
-PACKAGE_VERSION = 3.4.16
+PACKAGE_VERSION = 3.4.17
 COPYRIGHT 	= Copyright (c) 2006 - 2019 ak obs, ltd. <info@omobus.net>
 SUPPORT 	= Support and bug reports: <support@omobus.net>
 AUTHOR		= Author: Igor Artemov <i_artemov@ak-obs.ru>

@@ -631,8 +631,8 @@ create table recom_retail_prices (
 create table recom_shares (
     account_id 		uid_t 		not null,
     categ_id 		uid_t 		not null,
-    sos 		wf_t 		null check(target between 0.01 and 1.00),
-    soa 		wf_t 		null check(target between 0.01 and 1.00),
+    sos 		wf_t 		null check(sos between 0.01 and 1.00),
+    soa 		wf_t 		null check(soa between 0.01 and 1.00),
     primary key(account_id, categ_id)
 );
 
