@@ -80,6 +80,8 @@ execute sp_addtype descr_t, 'varchar(256)'
 execute sp_addtype doctype_t, 'varchar(24)'
 execute sp_addtype double_t, 'float'
 execute sp_addtype discount_t, 'numeric(5,2)'
+execute sp_addtype ean13_t, 'varchar(13)'
+execute sp_addtype ean13s_t, 'varchar(280)'
 execute sp_addtype email_t, 'varchar(254)'
 execute sp_addtype emails_t, 'varchar(4096)'
 execute sp_addtype ftype_t, 'smallint'
@@ -570,7 +572,7 @@ create table products (
     obsolete 		bool_t 		null,
     novelty 		bool_t 		null,
     promo 		bool_t 		null,
-    barcodes 		codes_t 	null,
+    barcodes 		ean13s_t 	null,
     "image" 		image 		null,
     country_ids 	countries_t 	null,
     row_no 		int32_t 	null
