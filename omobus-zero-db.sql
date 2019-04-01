@@ -583,8 +583,8 @@ create table rating_criterias (
     pid 		uid_t 		null,
     ftype 		bool_t 		not null,
     descr 		descr_t 	not null,
-    wf 			wf_t 		not null check(wf between 0.01 and 1.00),
-    mandatory 		bool_t 		not null,
+    wf 			wf_t 		null check((ftype=0 and wf is not null and wf between 0.01 and 1.00) or (ftype<>0 and wf is null)),
+    mandatory 		bool_t 		null check((ftype=0 and mandatory is not null) or (ftype<>0 and mandatory is null)),
     extra_info 		note_t 		null,
     row_no 		int32_t 	null
 );
