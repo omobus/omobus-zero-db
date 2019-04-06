@@ -235,11 +235,6 @@ create table comment_types (
     row_no 		int32_t 	null
 );
 
-create table conference_themes (
-    ctheme_id 		uid_t 		not null primary key,
-    descr 		descr_t 	not null
-);
-
 create table contacts (
     contact_id 		uid_t 		not null primary key,
     account_id 		uid_t 		not null,

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<conference_themes templ="%ctheme_id%;%descr%;">
-  <![CDATA[
-select ctheme_id, descr from conference_themes
-    order by 1
-  ]]>
-</conference_themes>
