@@ -385,7 +385,7 @@ create table matrices (
     matrix_type_id 	uid_t 		not null,
     placement_ids 	uids_t 		null,
     row_no 		int32_t 	null, -- ordering
-    primary key (account_id, placement_id, prod_id, matrix_type_id)
+    primary key (account_id, prod_id, matrix_type_id)
 );
 
 create table my_accounts (
