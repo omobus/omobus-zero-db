@@ -386,9 +386,9 @@ create table matrix_types (
 
 create table matrices (
     account_id 		uid_t 		not null,
-    placement_id 	uid_t 		not null,
     prod_id 		uid_t 		not null,
     matrix_type_id 	uid_t 		not null,
+    placement_ids 	uids_t 		null,
     row_no 		int32_t 	null, -- ordering
     primary key (account_id, placement_id, prod_id, matrix_type_id)
 );

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<matrices templ="%account_id%;%placement_id%;%prod_id%;%matrix_type_id%;%row_no%;">
+<matrices templ="%account_id%;%prod_id%;%matrix_type_id%;%placement_ids%;%row_no%;">
   <![CDATA[
-select account_id, placement_id, prod_id, matrix_type_id, row_no from matrices
+select account_id, prod_id, matrix_type_id, placement_ids, row_no from matrices
     order by 1, 2, 3, 4
   ]]>
 </matrices>
