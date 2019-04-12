@@ -373,19 +373,12 @@ create table manufacturers (
     competitor 		bool_t 		null
 );
 
-create table matrix_types (
-    matrix_type_id 	uid_t 		not null primary key,
-    descr 		descr_t 	not null,
-    mandatory 		bool_t 		null
-);
-
 create table matrices (
     account_id 		uid_t 		not null,
     prod_id 		uid_t 		not null,
-    matrix_type_id 	uid_t 		not null,
     placement_ids 	uids_t 		null,
     row_no 		int32_t 	null, -- ordering
-    primary key (account_id, prod_id, matrix_type_id)
+    primary key (account_id, prod_id)
 );
 
 create table my_accounts (

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<matrix_types templ="%matrix_type_id%;%descr%;%mandatory%;%color%;%bgcolor%;">
-  <![CDATA[
-select matrix_type_id, descr, mandatory, null color, null bgcolor from matrix_types
-    order by 1
-  ]]>
-</matrix_types>

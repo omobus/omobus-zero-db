@@ -58,7 +58,6 @@
 <xi:include href="../queries/data/kinds.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/manufacturers.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/matrices.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
-<xi:include href="../queries/data/matrix_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/mutuals.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/mutuals_history.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/mutuals_history_products.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
@@ -148,7 +147,6 @@
     <kinds />
     <manufacturers />
     <matrices />
-    <matrix_types />
     <mutuals />
     <mutuals_history />
     <mutuals_history_products />
