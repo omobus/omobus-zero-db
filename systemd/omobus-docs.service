@@ -1,5 +1,5 @@
 [Unit]
-Description=OMOBUS zero service (docs)
+Description=[omobusd: zero-docs] service
 After=local-fs.target network.target
 
 [Service]
