@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<agreements2 templ="%account_id%;%prod_id%;%b_date%;%e_date%;%facing%;">
+  <![CDATA[
+select account_id, prod_id, b_date, e_date, facing from agreements2
+    order by 1, 2, 3, 4
+  ]]>
+</agreements2>
