@@ -510,6 +510,19 @@ create table pmlist (
     primary key(account_id, prod_id, b_date)
 );
 
+create table pos_materials ( /* Point-of-Sale and Point-of-Purchase materials */
+    posm_id 		uid_t 		not null primary key default man_id(),
+    descr 		descr_t 	not null,
+    "image" 		blob_t 		not null,
+    brand_ids 		uids_t 		null,
+    placement_ids 	uids_t 		null,
+    chan_ids 		uids_t 		null,
+    dep_id 		uid_t 		null,
+    country_id		country_t 	null,
+    b_date 		date_t 		null,
+    e_date 		date_t 		null,
+);
+
 create table products (
     prod_id 		uid_t 		not null primary key,
     pid 		uid_t 		null,
