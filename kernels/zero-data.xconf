@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kernel 
+    module="kern_sync" 
+    ldap.uri="ldap://127.0.0.1:389" 
+    ldap.bind_dn="uid=omobusd,ou=services,dc=omobus,dc=local"
+    ldap.bind_pw="0"
+    ldap.base="ou=proxy-db,dc=omobus,dc=local" 
+    ldap.filter="(&amp;(objectClass=PureFTPdUser)(objectClass=omobusMaintainPoint)(FTPStatus=enabled)(exchangeStatus=enabled))"
+    Xldap.tls="yes"
+    ftp.host="127.0.0.1"
+    ftp.port="21021"
+    ftp.path="data/"
+    ftp.connect_timeout="10"
+    ftp.recv_timeout="5"
+    ftp.send_timeout="5"
+    ftp.epsv="yes"
+    ftp.tls="yes"
+    ftp.ccc="no"
+    ftp.cdc="no"
+    pack.type="txt.gz"
+    pack.level="6"
+    cache="zero/data/"
+    diff="yes"
+    >
+<queries>
+<xi:include href="../queries/zero-data/TTD.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/account_params.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/account_prices.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/accounts.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/addition_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/agencies.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/agreements1.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/agreements2.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/attributes.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/audit_criterias.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/audit_scores.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/blacklist.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/brands.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/canceling_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/categories.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/channels.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/cities.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/comment_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/contacts.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/debts.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/delivery_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/departments.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/discard_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/discounts.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/distributors.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/equipment_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/equipments.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/erp_docs.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/erp_products.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/floating_prices.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/group_prices.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/highlights.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/job_titles.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/kinds.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/manufacturers.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/matrices.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/mutuals.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/mutuals_history.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/mutuals_history_products.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/my_accounts.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/my_cities.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/my_regions.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/my_retail_chains.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/my_routes.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/oos_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/order_params.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/order_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/ownership_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/packs.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/payment_methods.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/pending_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/permitted_returns.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/photo_params.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/photo_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/placements.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/plu_codes.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/pmlist.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/potentials.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/pos_materials.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/priorities.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/products.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/rating_criterias.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/rating_scores.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/rdd.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/receipt_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/reclamation_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/recom_orders.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/recom_retail_prices.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/recom_shares.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/refunds.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/refunds_products.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/regions.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/restrictions.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/retail_chains.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/sales_history.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/shelf_lifes.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/shipments.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/std_prices.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/symlinks.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/targets.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/testing_criterias.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/testing_scores.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/unsched_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/users.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/vf_accounts.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/vf_names.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/vf_products.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/wareh_stocks.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/warehouses.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+</queries>
+<pack>
+    <TTD />
+    <account_params />
+    <account_prices />
+    <accounts />
+    <addition_types />
+    <agencies />
+    <agreements1 />
+    <agreements2 />
+    <attributes />
+    <audit_criterias />
+    <audit_scores />
+    <blacklist />
+    <brands />
+    <canceling_types />
+    <categories />
+    <channels />
+    <cities />
+    <comment_types />
+    <conference_themes />
+    <contacts />
+    <debts />
+    <delivery_types />
+    <departments />
+    <discard_types />
+    <discounts />
+    <distributors />
+    <equipment_types />
+    <equipments />
+    <erp_docs />
+    <erp_products />
+    <floating_prices />
+    <group_prices />
+    <highlights />
+    <job_titles />
+    <kinds />
+    <manufacturers />
+    <matrices />
+    <mutuals />
+    <mutuals_history />
+    <mutuals_history_products />
+    <my_accounts />
+    <my_cities />
+    <my_regions />
+    <my_retail_chains />
+    <my_routes />
+    <oos_types />
+    <order_params />
+    <order_types />
+    <ownership_types />
+    <packs />
+    <payment_methods />
+    <pending_types />
+    <permitted_returns />
+    <photo_params />
+    <photo_types />
+    <placements />
+    <plu_codes />
+    <pmlist />
+    <potentials />
+    <pos_materials />
+    <products />
+    <rating_criterias />
+    <rating_scores />
+    <rdd />
+    <receipt_types />
+    <reclamation_types />
+    <recom_orders />
+    <recom_retail_prices />
+    <recom_shares />
+    <refunds />
+    <refunds_products />
+    <regions />
+    <restrictions />
+    <retail_chains />
+    <sales_history />
+    <shelf_lifes />
+    <shipments />
+    <std_prices />
+    <symlinks />
+    <targets />
+    <testing_criterias />
+    <testing_scores />
+    <unsched_types />
+    <users />
+    <vf_accounts />
+    <vf_names />
+    <vf_products />
+    <wareh_stocks />
+    <warehouses />
+</pack>
+</kernel>

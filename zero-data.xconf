@@ -2,5 +2,5 @@
 <omobusd timeout="150">
     <xi:include href="connections/zero-db.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
     <xi:include href="transactions/read.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
-    <xi:include href="kernels/data.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+    <xi:include href="kernels/zero-data.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 </omobusd>

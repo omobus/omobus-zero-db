@@ -1,13 +1,13 @@
 [Unit]
-Description=[omobusd: zero-docs] service
+Description=[omobusd: zero-gc] service
 After=local-fs.target network.target
 
 [Service]
 #Type=forking
-PIDFile=/var/run/omobus.d/omobus-docs.pid
+PIDFile=/var/run/omobus.d/omobus-zero-gc.pid
 ExecStartPre=/bin/mkdir -m 0755 -p /var/run/omobus.d
 ExecStartPre=/bin/chown omobus:omobus /var/run/omobus.d
-ExecStart=/usr/local/sbin/omobusd docs -x -u omobus -g omobus -p /var/run/omobus.d/omobus-docs.pid
+ExecStart=/usr/local/sbin/omobusd zero-gc -x -u omobus -g omobus -p /var/run/omobus.d/omobus-zero-gc.pid
 ExecStop=/bin/kill -s USR1 $MAINPID
 
 [Install]

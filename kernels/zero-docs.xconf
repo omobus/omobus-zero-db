@@ -20,9 +20,9 @@
     pack.gc="1"
     cache="zero/docs/"
     >
-<xi:include href="../queries/docs/activity_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
-<xi:include href="../queries/docs/orders.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
-<xi:include href="../queries/docs/receipts.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
-<xi:include href="../queries/docs/reclamations.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
-<xi:include href="../queries/docs/target_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-docs/activity_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-docs/orders.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-docs/receipts.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-docs/reclamations.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-docs/target_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 </kernel>
