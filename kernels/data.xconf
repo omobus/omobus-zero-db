@@ -29,7 +29,7 @@
 <xi:include href="../queries/data/accounts.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/addition_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/agencies.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
-<xi:include href="../queries/data/agreements.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/data/agreements1.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/agreements2.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/attributes.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/data/audit_criterias.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
@@ -119,7 +119,7 @@
     <accounts />
     <addition_types />
     <agencies />
-    <agreements />
+    <agreements1 />
     <agreements2 />
     <attributes />
     <audit_criterias />

@@ -116,7 +116,7 @@ create table agencies (
     descr 		descr_t 	not null
 );
 
-create table agreements (
+create table agreements1 (
     account_id 		uid_t 		not null,
     placement_id 	uid_t 		not null,
     posm_id 		uid_t 		not null,
