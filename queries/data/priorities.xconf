@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<priorities templ="%country_id%;%brand_id%;%b_date%;%e_date%;">
+  <![CDATA[ 
+select country_id, brand_id, b_date, e_date from priorities
+    order by 1, 2, 3
+  ]]>
+</priorities>
