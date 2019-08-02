@@ -638,6 +638,8 @@ create table sales_history (
     amount_r 		currency_t 	null,
     pack_r_id 		uid_t 		null,
     qty_r 		int32_t 	null,
+    color 		int32_t 	null,
+    bgcolor 		int32_t 	null,
     extra_info 		note_t 		null,
     primary key (account_id, prod_id, s_date)
 );
