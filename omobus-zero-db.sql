@@ -573,6 +573,7 @@ create table quest_rows (
     descr 		descr_t 	not null,
     qtype 		varchar(7) 	null check(ftype=0 and qtype in ('boolean','integer') or (ftype<>0 and qtype is null)),
     extra_info 		note_t 		null,
+    country_ids 	countries_t 	null,
     row_no 		int32_t 	null, -- ordering
     primary key(qname_id, qrow_id)
 );
