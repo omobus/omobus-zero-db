@@ -560,6 +560,23 @@ create table products (
     row_no 		int32_t 	null
 );
 
+create table quest_names (
+    qname_id 		uid_t 		not null primary key,
+    descr 		descr_t 	not null
+);
+
+create table quest_rows (
+    qname_id 		uid_t 		not null,
+    qrow_id 		uid_t 		not null default man_id(),
+    pid 		uid_t 		null,
+    ftype 		ftype_t 	not null,
+    descr 		descr_t 	not null,
+    qtype 		varchar(7) 	null check(ftype=0 and qtype in ('boolean','integer') or (ftype<>0 and qtype is null)),
+    extra_info 		note_t 		null,
+    row_no 		int32_t 	null, -- ordering
+    primary key(qname_id, qrow_id)
+);
+
 create table rating_criterias (
     rating_criteria_id 	uid_t 		not null primary key,
     pid 		uid_t 		null,

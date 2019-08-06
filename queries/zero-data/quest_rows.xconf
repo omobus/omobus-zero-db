@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<quest_rows templ="%qname_id%;%qrow_id%;%pid%;%ftype%;%descr%;%qtype%;%extra_info%;%row_no%;">
+  <![CDATA[
+select qname_id, qrow_id, pid, ftype, descr, qtype, extra_info, row_no from quest_rows
+    order by 1, 2
+  ]]>
+</quest_rows>
