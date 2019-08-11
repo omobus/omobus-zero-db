@@ -231,7 +231,8 @@ create table debts (
 
 create table delivery_types (
     delivery_type_id 	uid_t 		not null primary key,
-    descr 		descr_t 	not null
+    descr 		descr_t 	not null,
+    row_no 		int32_t 	null -- ordering
 );
 
 create table departments (
@@ -241,7 +242,8 @@ create table departments (
 
 create table discard_types (
     discard_type_id 	uid_t 		not null primary key,
-    descr 		descr_t 	not null
+    descr 		descr_t 	not null,
+    row_no 		int32_t 	null -- ordering
 );
 
 create table discounts (
@@ -465,7 +467,8 @@ create table payment_methods (
 
 create table pending_types (
     pending_type_id 	uid_t 		not null primary key,
-    descr 		descr_t 	not null
+    descr 		descr_t 	not null,
+    row_no 		int32_t 	null -- ordering
 );
 
 create table permitted_returns ( /* products allowed for the [reclamation] document */
