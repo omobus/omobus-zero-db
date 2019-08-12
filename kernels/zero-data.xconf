@@ -99,6 +99,7 @@
 <xi:include href="../queries/zero-data/regions.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/restrictions.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/retail_chains.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/rules.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/sales_history.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/shelf_lifes.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/shipments.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
@@ -190,6 +191,7 @@
     <regions />
     <restrictions />
     <retail_chains />
+    <rules />
     <sales_history />
     <shelf_lifes />
     <shipments />

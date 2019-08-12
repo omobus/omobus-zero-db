@@ -679,6 +679,19 @@ create table retail_chains (
     country_id 		country_t 	null
 );
 
+create table rules (
+    doc_type 		doctype_t 	not null,
+    role 		code_t 		not null,
+    frequency 		code_t 		not null check(frequency in ('everytime','once_a_week','once_a_month')),
+    account_ids 	uids_t 		null,
+    region_ids 		uids_t		null,
+    city_ids 		uids_t		null,
+    rc_ids 		uids_t		null, /* -> retail_chains */
+    chan_ids		uids_t 		null,
+    poten_ids 		uids_t 		null,
+    primary key(doc_type, role)
+);
+
 create table sales_history (
     account_id 		uid_t 		not null,
     prod_id 		uid_t 		not null,
