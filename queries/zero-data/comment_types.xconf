@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<comment_types templ="%comment_type_id%;%descr%;%min_note_length%;%photo_needed%;%row_no%;">
+<comment_types templ="%comment_type_id%;%descr%;%min_note_length%;%photo_needed%;%extra_info%;%row_no%;">
   <![CDATA[
-select comment_type_id, descr, min_note_length, photo_needed, row_no from comment_types
+select comment_type_id, descr, min_note_length, photo_needed, extra_info, row_no from comment_types
     order by 1
   ]]>
 </comment_types>

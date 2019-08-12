@@ -205,6 +205,7 @@ create table comment_types (
     descr 		descr_t 	not null,
     min_note_length 	int32_t 	null,
     photo_needed 	bool_t 		null,
+    extra_info 		note_t 		null,
     row_no 		int32_t 	null
 );
 
