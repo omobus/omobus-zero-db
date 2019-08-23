@@ -753,6 +753,7 @@ create table targets (
     poten_ids 		uids_t 		null,
     region_ids 		uids_t 		null,
     city_ids 		uids_t 		null,
+    b_offset 		int32_t 	null,
     attrs 		varchar(1024) 	null
 );
 
