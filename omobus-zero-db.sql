@@ -537,11 +537,11 @@ create table pos_materials ( /* Point-of-Sale and Point-of-Purchase materials */
 );
 
 create table priorities (
-    country_id 		uid_t 		not null,
     brand_id 		uid_t 		not null,
     b_date 		date_t 		not null,
     e_date 		date_t 		not null,
-    primary key (country_id, brand_id, b_date)
+    country_id 		uid_t 		not null,
+    primary key (brand_id, b_date, country_id)
 );
 
 create table products (
