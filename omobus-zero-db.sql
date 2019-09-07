@@ -51,6 +51,7 @@ execute sp_addtype emails_t, 'varchar(4096)'
 execute sp_addtype ftype_t, 'smallint'
 execute sp_addtype gps_t, 'numeric(10,6)'
 execute sp_addtype hostname_t, 'varchar(255)'
+execute sp_addtype hstore_t, 'varchar(1024)'
 execute sp_addtype int32_t, 'int'
 execute sp_addtype int64_t, 'bigint'
 execute sp_addtype message_t, 'varchar(4096)'
@@ -84,7 +85,8 @@ create table accounts (
     region_id 		uid_t 		null,
     city_id 		uid_t 		null,
     latitude 		gps_t 		null,
-    longitude 		gps_t 		null
+    longitude 		gps_t 		null,
+    props 		hstore_t 	null
 );
 
 create table account_params (
@@ -122,7 +124,7 @@ create table agreements1 (
     posm_id 		uid_t 		not null,
     b_date 		date_t 		not null,
     e_date 		date_t 		not null,
-    strict 		bool_t 		null,
+    strict 		bool_t 		not null default 0,
     primary key (account_id, placement_id, posm_id, b_date)
 );
 
@@ -132,6 +134,7 @@ create table agreements2 (
     b_date 		date_t 		not null,
     e_date 		date_t 		not null,
     facing 		int32_t 	not null,
+    strict 		bool_t 		not null default 0,
     primary key (account_id, prod_id, b_date)
 );
 
@@ -754,7 +757,8 @@ create table targets (
     region_ids 		uids_t 		null,
     city_ids 		uids_t 		null,
     b_offset 		int32_t 	null,
-    attrs 		varchar(1024) 	null
+    renewable 		bool_t 		not null default 0,
+    props 		hstore_t 	null
 );
 
 create table testing_criterias (
@@ -793,7 +797,8 @@ create table users (
     agency_id 		uid_t 		null,
     mobile 		phone_t 	null,
     email 		email_t 	null,
-    area 		descr_t 	null
+    area 		descr_t 	null,
+    props 		hstore_t 	null
 );
 
 create table vf_accounts (
