@@ -756,7 +756,6 @@ create table targets (
     poten_ids 		uids_t 		null,
     region_ids 		uids_t 		null,
     city_ids 		uids_t 		null,
-    b_offset 		int32_t 	null check(b_offset is null or b_offset > 0),
     renewable 		bool_t 		not null default 0,
     props 		hstore_t 	null
 );
