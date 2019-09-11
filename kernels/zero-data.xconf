@@ -31,6 +31,7 @@
 <xi:include href="../queries/zero-data/agencies.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/agreements1.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/agreements2.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/asp_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/attributes.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/audit_criterias.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/audit_scores.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
@@ -97,6 +98,7 @@
 <xi:include href="../queries/zero-data/refunds.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/refunds_products.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/regions.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/remark_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/restrictions.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/retail_chains.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/rules.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
@@ -125,6 +127,7 @@
     <agencies />
     <agreements1 />
     <agreements2 />
+    <asp_types />
     <attributes />
     <audit_criterias />
     <audit_scores />
@@ -189,6 +192,7 @@
     <refunds />
     <refunds_products />
     <regions />
+    <remark_types />
     <restrictions />
     <retail_chains />
     <rules />

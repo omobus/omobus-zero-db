@@ -138,6 +138,12 @@ create table agreements2 (
     primary key (account_id, prod_id, b_date)
 );
 
+create table asp_types (
+    asp_type_id 	uid_t 		not null primary key,
+    descr 		descr_t 	not null,
+    row_no 		int32_t 	null -- ordering
+);
+
 create table attributes (
     attr_id 		uid_t 		not null primary key,
     descr 		descr_t 	not null
@@ -662,6 +668,12 @@ create table regions (
     region_id 		uid_t 		not null primary key,
     descr 		descr_t 	not null,
     country_id 		country_t 	null
+);
+
+create table remark_types (
+    remark_type_id 	uid_t 		not null primary key,
+    descr 		descr_t 	not null,
+    row_no 		int32_t 	null -- ordering
 );
 
 create table restrictions (

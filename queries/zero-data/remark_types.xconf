@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<remark_types templ="%remark_type_id%;%descr%;%row_no%;">
+  <![CDATA[ 
+select remark_type_id, descr, row_no from remark_types
+    order by 1
+  ]]>
+</remark_types>
