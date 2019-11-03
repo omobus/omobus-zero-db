@@ -133,7 +133,7 @@ create table agreements2 (
     prod_id 		uid_t 		not null,
     b_date 		date_t 		not null,
     e_date 		date_t 		not null,
-    facing 		int32_t 	not null,
+    facing 		int32_t 	not null check(facing > 0),
     strict 		bool_t 		not null default 0,
     primary key (account_id, prod_id, b_date)
 );
@@ -802,7 +802,7 @@ create table users (
     pids 		uids_t 		null,
     descr 		descr_t 	not null,
     role 		code_t 		null, -- check (role in ('merch','sr','mr','sv','ise','cde','asm','rsm') and role = lower(role)),
-    country_ids 	countries_t 	null,
+    country_id 		country_t 	not null default 'RU'
     dep_ids 		uids_t 		null,
     distr_ids 		uids_t 		null,
     agency_id 		uid_t 		null,
