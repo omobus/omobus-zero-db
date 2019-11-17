@@ -936,7 +936,6 @@ create table dyn_advt (
 );
 
 create table dyn_audits (
-    db_id 		uid_t 		not null,
     fix_date		date_t 		not null,
     account_id 		uid_t 		not null,
     categ_id 		uid_t 		not null,
