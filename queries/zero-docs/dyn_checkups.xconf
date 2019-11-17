@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dyn_checkups templ="%fix_date%;%account_id%;%placement_id%;%prod_id%;%exist%;%fix_dt%;%user_id%;">
+<check_exist>
+  <![CDATA[
+select count(*) exist from dyn_checkups 
+    where fix_date = '%fix_date%' and account_id = '%account_id%' and placement_id = '%placement_id%' and prod_id = '%prod_id%'
+  ]]>
+</check_exist>
+<update>
+  <![CDATA[
+update dyn_checkups set exist=0%exist%, user_id='%user_id%', fix_dt='%fix_dt%'
+    where fix_date = '%fix_date%' and account_id = '%account_id%' and placement_id = '%placement_id%' and prod_id = '%prod_id%'
+  ]]>
+</update>
+<insert>
+  <![CDATA[
+insert into dyn_checkups (fix_date, account_id, placement_id, prod_id, exist, fix_dt, user_id)
+    values ('%fix_date%', '%account_id%', '%placement_id%', '%prod_id%', 0%exist%, '%fix_dt%', '%user_id%')
+  ]]>
+</insert>
+</dyn_checkups>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dyn_oos templ="%fix_date%;%account_id%;%prod_id%;%oos_type_id%;%note%;%fix_dt%;%user_id%;">
+<check_exist>
+  <![CDATA[
+select count(*) exist from dyn_oos 
+    where fix_date = '%fix_date%' and account_id = '%account_id%' and prod_id = '%prod_id%'
+  ]]>
+</check_exist>
+<update>
+  <![CDATA[
+update dyn_oos set oos_type_id='%oos_type_id%', note=note_in('%note%'), user_id='%user_id%', fix_dt='%fix_dt%'
+    where fix_date = '%fix_date%' and account_id = '%account_id%' and prod_id = '%prod_id%'
+  ]]>
+</update>
+<insert>
+  <![CDATA[
+insert into dyn_oos (fix_date, account_id, prod_id, oos_type_id, note, fix_dt, user_id)
+    values ('%fix_date%', '%account_id%', '%prod_id%', '%oos_type_id%', note_in('%note%'), '%fix_dt%', '%user_id%')
+  ]]>
+</insert>
+</dyn_oos>

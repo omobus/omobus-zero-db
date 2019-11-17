@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dyn_quests templ="%fix_date%;%account_id%;%qname_id%;%qrow_id%;%value%;%fix_dt%;%user_id%;">
+<check_exist>
+  <![CDATA[
+select count(*) exist from dyn_quests 
+    where fix_date = '%fix_date%' and account_id = '%account_id%' and qname_id = '%qname_id%' and qrow_id = '%qrow_id%'
+  ]]>
+</check_exist>
+<update>
+  <![CDATA[
+update dyn_quests set value='%value%', user_id='%user_id%', fix_dt='%fix_dt%'
+    where fix_date = '%fix_date%' and account_id = '%account_id%' and qname_id = '%qname_id%' and qrow_id = '%qrow_id%'
+  ]]>
+</update>
+<insert>
+  <![CDATA[
+insert into dyn_quests (fix_date, account_id, qname_id, qrow_id, value, fix_dt, user_id)
+    values ('%fix_date%', '%account_id%', '%qname_id%', '%qrow_id%', '%value%', '%fix_dt%', '%user_id%')
+  ]]>
+</insert>
+</dyn_quests>

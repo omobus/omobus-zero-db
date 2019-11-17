@@ -24,7 +24,6 @@ go
 alter database "omobus-zero-db" set ALLOW_SNAPSHOT_ISOLATION on
 go
 
--- **** domains ****
 
 execute sp_addtype address_t, 'varchar(256)'
 execute sp_addtype art_t, 'varchar(24)'
@@ -61,7 +60,6 @@ execute sp_addtype percent_t, 'smallint'
 execute sp_addtype phone_t, 'varchar(32)'
 execute sp_addtype state_t, 'varchar(8)'
 execute sp_addtype time_t, 'char(5)'
-execute sp_addtype ts_auto_t, 'datetime'
 execute sp_addtype ts_t, 'datetime'
 execute sp_addtype uid_t, 'varchar(48)'
 execute sp_addtype uids_t, 'varchar(2048)'
@@ -70,7 +68,6 @@ execute sp_addtype weight_t, 'numeric(12,6)'
 execute sp_addtype wf_t, 'numeric(3,2)'
 go
 
--- **** ERP -> OMOBUS streams ****
 
 create table accounts (
     account_id 		uid_t 		not null primary key,
@@ -850,13 +847,261 @@ create table wareh_stocks (
 go
 
 
--- **** OMOBUS -> ERP streams ****
-
 create table activity_types (
     activity_type_id 	uid_t 		not null primary key,
     descr 		descr_t 	not null,
     strict 		bool_t 		not null default 0, /* sets to 1 (true) for direct visits to the accounts */
     hidden 		bool_t 		not null default 0
+);
+
+create table additions (
+    doc_id 		uid_t 		not null primary key,
+    user_id		uid_t 		not null,
+    fix_dt		datetime_t 	not null,
+    account 		descr_t 	null,
+    address 		address_t 	null,
+    legal_address 	address_t 	null,
+    number 		code_t 		null,
+    addition_type_id 	uid_t 		null,
+    note 		note_t 		null,
+    chan_id 		uid_t 		null,
+    photos 		uids_t 		null,
+    attr_ids 		uids_t 		null,
+    account_id 		uid_t 		not null,
+    validator_id 	uid_t		null,
+    validated 		bool_t 		not null default 0,
+    hidden 		bool_t 		not null default 0,
+    geo_address 	address_t 	null,
+    inserted_ts 	ts_t 		not null default current_timestamp
+);
+
+create table cancellations (
+    user_id		uid_t 		not null,
+    route_date		date_t 		not null,
+    canceling_type_id	uid_t 		null,
+    note 		note_t 		null,
+    hidden		bool_t 		not null default 0,
+    inserted_ts 	ts_t 		not null default current_timestamp
+    primary key (user_id, route_date)
+);
+
+create table comments (
+    doc_id 		uid_t 		not null primary key,
+    fix_dt 		datetime_t 	not null,
+    user_id 		uid_t 		not null,
+    account_id 		uid_t 		not null,
+    comment_type_id 	uid_t 		not null,
+    doc_note 		note_t 		null,
+    photo		uid_t		null,
+    inserted_ts 	ts_t 		not null default current_timestamp
+);
+
+create table deletions (
+    account_id  	uid_t 		not null primary key,
+    user_id		uid_t 		not null,
+    fix_dt		datetime_t 	not null,
+    note		note_t		null,
+    photo		uid_t		null,
+    validator_id 	uid_t		null,
+    validated 		bool_t 		not null default 0,
+    hidden 		bool_t 		not null default 0,
+    inserted_ts 	ts_t 		not null default current_timestamp
+);
+
+create table discards (
+    account_id  	uid_t 		not null,
+    user_id		uid_t 		not null,
+    fix_dt		datetime_t 	not null,
+    activity_type_id 	uid_t 		not null,
+    discard_type_id 	uid_t 		null,
+    route_date 		date_t 		not null,
+    note		note_t		null,
+    validator_id 	uid_t		null,
+    validated 		bool_t 		not null default 0,
+    hidden 		bool_t 		not null default 0,
+    inserted_ts 	ts_t 		not null default current_timestamp,
+    primary key(account_id, user_id, activity_type_id, route_date)
+);
+
+create table dyn_advt (
+    fix_date		date_t 		not null,
+    account_id 		uid_t 		not null,
+    placement_id 	uid_t 		not null,
+    posm_id 		uid_t 		not null,
+    qty 		int32_t 	not null check (qty >= 0),
+    fix_dt		datetime_t 	not null,
+    user_id 		uid_t 		not null,
+    inserted_ts 	ts_t 		not null default current_timestamp,
+    primary key(fix_date, account_id, placement_id, posm_id)
+);
+
+create table dyn_audits (
+    db_id 		uid_t 		not null,
+    fix_date		date_t 		not null,
+    account_id 		uid_t 		not null,
+    categ_id 		uid_t 		not null,
+    audit_criteria_id 	uid_t 		not null,
+    audit_score_id 	uid_t 		null,
+    criteria_wf 	wf_t 		not null check(criteria_wf between 0.01 and 1.00),
+    score_wf 		wf_t 		null check(score_wf between 0.00 and 1.00),
+    score 		int32_t 	null check (score >= 0),
+    note 		note_t 		null,
+    wf 			wf_t 		not null check(wf between 0.01 and 1.00),
+    sla 		numeric(6,5) 	not null check(sla between 0.0 and 1.0),
+    photos		uids_t		null,
+    fix_dt 		datetime_t 	not null,
+    user_id 		uid_t 		not null,
+    inserted_ts 	ts_t 		not null default current_timestamp,
+    primary key(fix_date, account_id, categ_id, audit_criteria_id)
+);
+
+create table dyn_checkups (
+    fix_date		date_t 		not null,
+    account_id 		uid_t 		not null,
+    placement_id 	uid_t 		not null,
+    prod_id 		uid_t 		not null,
+    exist 		int32_t 	not null,
+    fix_dt		datetime_t 	not null,
+    user_id 		uid_t 		not null,
+    inserted_ts 	ts_t 		not null default current_timestamp,
+    primary key(fix_date, account_id, placement_id, prod_id)
+);
+
+create table dyn_oos (
+    fix_date		date_t 		not null,
+    account_id 		uid_t 		not null,
+    prod_id 		uid_t 		not null,
+    oos_type_id 	uid_t 		not null,
+    note 		note_t 		null,
+    fix_dt		datetime_t 	not null,
+    user_id 		uid_t 		not null,
+    inserted_ts 	ts_t 		not null default current_timestamp,
+    primary key(fix_date, account_id, prod_id)
+);
+
+create table dyn_presences (
+    fix_date		date_t 		not null,
+    account_id 		uid_t 		not null,
+    prod_id 		uid_t 		not null,
+    facing 		int32_t 	not null,
+    stock 		int32_t 	not null,
+    fix_dt		datetime_t 	not null,
+    user_id 		uid_t 		not null,
+    inserted_ts 	ts_t 		not null default current_timestamp,
+    primary key(fix_date, account_id, prod_id)
+);
+
+create table dyn_prices (
+    fix_date		date_t 		not null,
+    account_id 		uid_t 		not null,
+    prod_id 		uid_t 		not null,
+    price 		currency_t 	not null,
+    promo 		bool_t 		not null,
+    rrp 		currency_t 	null,
+    fix_dt		datetime_t 	not null,
+    user_id 		uid_t 		not null,
+    inserted_ts 	ts_t 		not null default current_timestamp,
+    primary key(fix_date, account_id, prod_id)
+);
+
+create table dyn_quests (
+    fix_date		date_t 		not null,
+    account_id 		uid_t 		not null,
+    qname_id 		uid_t 		not null,
+    qrow_id 		uid_t		not null,
+    "value" 		varchar(64) 	not null,
+    fix_dt 		datetime_t 	not null,
+    user_id 		uid_t 		not null,
+    inserted_ts 	ts_t 		not null default current_timestamp,
+    primary key(fix_date, account_id, qname_id, qrow_id)
+);
+
+create table dyn_ratings (
+    fix_date		date_t 		not null,
+    account_id 		uid_t 		not null,
+    employee_id 	uid_t 		not null,
+    rating_criteria_id 	uid_t 		not null,
+    rating_score_id 	uid_t 		null,
+    criteria_wf 	wf_t 		not null check(criteria_wf between 0.01 and 1.00),
+    score_wf 		wf_t 		null check(score_wf between 0.00 and 1.00),
+    score 		int32_t 	null check (score >= 0),
+    note 		note_t 		null,
+    fix_dt		datetime_t 	not null,
+    user_id 		uid_t 		not null,
+    inserted_ts 	ts_t 		not null default current_timestamp,
+    primary key(fix_date, account_id, employee_id, rating_criteria_id)
+);
+
+create table dyn_reviews (
+    fix_date		date_t 		not null,
+    employee_id 	uid_t 		not null,
+    sla 		numeric(6,5)	not null check(sla between 0.0 and 1.0),
+    assessment 		numeric(5,3)    not null check(assessment >= 0),
+    note0 		note_t 		null,
+    note1 		note_t 		null,
+    note2 		note_t 		null,
+    fix_dt		datetime_t 	not null,
+    user_id 		uid_t 		not null,
+    inserted_ts 	ts_t 		not null default current_timestamp,
+    primary key(fix_date, employee_id)
+);
+
+create table dyn_shelfs (
+    fix_date		date_t 		not null,
+    account_id 		uid_t 		not null,
+    categ_id 		uid_t 		not null,
+    brand_id 		uid_t 		not null,
+    facing 		int32_t 	null check (facing >= 0),
+    assortment 		int32_t 	null check (assortment >= 0),
+    sos 		numeric(6,5) 	null check(sos between 0.0 and 1.0),
+    soa 		numeric(6,5) 	null check(soa between 0.0 and 1.0),
+    photos		uids_t		null,
+    sos_target 		wf_t 		null check(sos_target between 0.01 and 1.00),
+    soa_target 		wf_t 		null check(soa_target between 0.01 and 1.00),
+    fix_dt 		datetime_t 	not null,
+    user_id 		uid_t 		not null,
+    inserted_ts 	ts_t 		not null default current_timestamp,
+    primary key(fix_date, account_id, categ_id, brand_id)
+);
+
+create table dyn_stocks (
+    fix_date		date_t 		not null,
+    account_id 		uid_t 		not null,
+    prod_id 		uid_t 		not null,
+    stock 		int32_t 	not null,
+    fix_dt 		datetime_t 	not null,
+    user_id 		uid_t 		not null,
+    inserted_ts 	ts_t 		not null default current_timestamp,
+    primary key(fix_date, account_id, prod_id)
+);
+
+create table dyn_testings (
+    fix_date		date_t 		not null,
+    account_id 		uid_t 		not null,
+    contact_id 		uid_t 		not null,
+    testing_criteria_id uid_t 		not null,
+    testing_score_id 	uid_t 		null,
+    criteria_wf 	wf_t 		not null check(criteria_wf between 0.01 and 1.00),
+    score_wf 		wf_t 		null check(score_wf between 0.00 and 1.00),
+    score 		int32_t 	null check (score >= 0),
+    note 		note_t 		null,
+    sla 		numeric(6,5) 	not null check(sla between 0.0 and 1.0),
+    fix_dt		datetime_t 	not null,
+    user_id 		uid_t 		not null,
+    inserted_ts 	ts_t 		not null default current_timestamp,
+    primary key(fix_date, account_id, contact_id, testing_criteria_id)
+);
+
+create table locations (
+    doc_id 		uid_t 		not null primary key,
+    fix_dt 		datetime_t 	not null,
+    user_id 		uid_t 		not null,
+    account_id 		uid_t 		not null,
+    latitude 		gps_t 		not null,
+    longitude 		gps_t 		not null,
+    accuracy 		double_t 	not null,
+    distr 		double_t 	null
+    inserted_ts 	ts_t 		not null default current_timestamp
 );
 
 create table orders (
@@ -892,6 +1137,32 @@ create table orders (
     volume 		volume_t 	not null,
     inserted_ts 	ts_t 		not null default current_timestamp,
     primary key (doc_id, prod_id)
+);
+
+create table photos (
+    doc_id		uid_t		not null primary key,
+    fix_dt		datetime_t	not null,
+    user_id		uid_t		not null,
+    account_id		uid_t		not null,
+    placement_id	uid_t		not null,
+    brand_id		uid_t		null,
+    photo_type_id	uid_t		null,
+    photo		uid_t		not null,
+    doc_note		note_t		null,
+    photo_param_ids	uids_t		null,
+    inserted_ts 	ts_t 		not null default current_timestamp
+);
+
+create table presentations (
+    doc_id 		uid_t 		not null primary key,
+    fix_dt 		datetime_t 	not null,
+    user_id 		uid_t 		not null,
+    account_id 		uid_t 		not null,
+    participants 	int32_t 	not null,
+    tm_ids 		uids_t 		null,
+    doc_note 		note_t 		null,
+    photos		uids_t		null,
+    inserted_ts 	ts_t 		not null default current_timestamp
 );
 
 create table receipts (
@@ -933,17 +1204,237 @@ create table reclamations (
     primary key (doc_id, prod_id)
 );
 
+create table revocations (
+    doc_id 		uid_t 		not null primary key,
+    doc_type 		doctype_t 	not null,
+    hidden		bool_t 		not null default 0,
+    inserted_ts 	ts_t 		not null default current_timestamp
+);
+
 create table target_types (
     target_type_id 	uid_t 		not null primary key,
     descr 		descr_t 	not null,
     hidden 		bool_t 		not null default 0
 );
 
+create table trainings (
+    doc_id 		uid_t 		not null primary key,
+    user_id 		uid_t 		not null,
+    account_id 		uid_t 		not null,
+    fix_dt 		datetime_t 	not null,
+    doc_note 		note_t 		null,
+    training_type_id	uid_t		null,
+    contact_ids 	uids_t 		not null,
+    tm_ids 		uids_t 		not null,
+    photos		uids_t		null,
+    inserted_ts 	ts_t 		not null default current_timestamp
+);
+
+create table unsched (
+    doc_id 		uid_t 		not null primary key,
+    fix_dt 		datetime_t 	not null,
+    user_id 		uid_t 		not null,
+    unsched_type_id 	uid_t 		null,
+    doc_note 		note_t 		null,
+    inserted_ts 	ts_t 		not null default current_timestamp
+);
+
+create table user_activities (
+    user_id 		uid_t 		not null,
+    account_id 		uid_t 		not null,
+    w_cookie 		uid_t 		not null,
+    a_cookie 		uid_t 		not null,
+    activity_type_id 	uid_t 		not null,
+    fix_date 		date_t 		not null,
+    route_date 		date_t 		null,
+    b_dt 		datetime_t 	not null,
+    b_la 		gps_t 		null,
+    b_lo 		gps_t 		null,
+    b_sat_dt 		datetime_t 	null,
+    e_dt 		datetime_t 	null,
+    e_la 		gps_t 		null,
+    e_lo 		gps_t 		null,
+    e_sat_dt 		datetime_t 	null,
+    employee_id 	uid_t 		null,
+    extra_info 		note_t 		null,
+    docs 		int32_t 	null,
+    inserted_ts 	ts_t 		not null default current_timestamp,
+    primary key (user_id, account_id, activity_type_id, w_cookie, a_cookie)
+);
+
+create table user_documents (
+    act_id 		uid_t 		not null primary key,
+    user_id 		uid_t 		not null,
+    w_cookie 		uid_t 		null,
+    fix_date 		date_t 		not null,
+    doc_type 		doctype_t 	not null,
+    doc_id 		uid_t 		null,
+    doc_no 		uid_t 		not null,
+    duration 		int32_t 	not null,
+    rows 		int32_t 	null,
+    fix_dt 		datetime_t 	not null,
+    latitude 		gps_t 		null,
+    longitude 		gps_t 		null,
+    satellite_dt 	datetime_t 	null,
+    /* activity to the account: */
+    a_cookie 		uid_t 		null,
+    account_id 		uid_t 		null,
+    activity_type_id 	uid_t 		null,
+    employee_id 	uid_t 		null,
+    /* */
+    inserted_ts 	ts_t 		not null default current_timestamp
+);
+
+create table user_locations (
+    act_id 		uid_t 		not null,
+    row_no 		int32_t 	not null,
+    user_id 		uid_t 		not null,
+    fix_date 		date_t 		not null,
+    latitude 		gps_t 		not null,
+    longitude 		gps_t 		not null,
+    satellite_dt 	datetime_t 	not null,
+    fix_dt 		datetime_t 	not null,
+    accuracy 		double_t 	not null,
+    altitude 		double_t 	not null,
+    bearing 		double_t 	not null,
+    speed 		double_t 	not null,
+    seconds 		int32_t 	null,
+    provider 		varchar(8) 	null check (provider in ('gps','network') and provider = lower(provider)),
+    satellites 		int32_t 	null,
+    inserted_ts 	ts_t 		not null default current_timestamp,
+    primary key(act_id, row_no)
+);
+
+create table user_reports (
+    act_id 		uid_t 		not null primary key,
+    user_id 		uid_t 		not null,
+    w_cookie 		uid_t 		null,
+    fix_date 		date_t 		not null,
+    doc_type 		doctype_t 	not null,
+    duration 		int32_t 	not null,
+    fix_dt 		datetime_t 	not null,
+    latitude 		gps_t 		null,
+    longitude 		gps_t 		null,
+    satellite_dt 	datetime_t 	null,
+    /* activity to the account: */
+    a_cookie 		uid_t 		null,
+    account_id 		uid_t 		null,
+    activity_type_id 	uid_t 		null,
+    employee_id 	uid_t 		null,
+    /* */
+    inserted_ts 	ts_t 		not null default current_timestamp
+);
+
+create table user_works (
+    user_id 		uid_t 		not null,
+    w_cookie 		uid_t 		not null,
+    fix_date 		date_t 		not null,
+    b_dt 		datetime_t 	not null,
+    b_la 		gps_t 		null,
+    b_lo 		gps_t 		null,
+    b_sat_dt 		datetime_t 	null,
+    e_dt 		datetime_t 	null,
+    e_la 		gps_t 		null,
+    e_lo 		gps_t 		null,
+    e_sat_dt 		datetime_t 	null,
+    inserted_ts 	ts_t 		not null default current_timestamp,
+    primary key (user_id, w_cookie)
+);
+
 go
 
 
+create function bool_in(@arg0 varchar(1)) returns bool_t
+as
+begin
+    return case when @arg0 = '' then null else @arg0 end
+end
+go
 
--- **** System tables and procedures ****
+create function currency_in(@arg0 varchar(20)) returns currency_t
+as
+begin
+    return case when @arg0 = '' then null else @arg0 end
+end
+go
+
+create function date_in(@arg0 varchar(10)) returns date_t
+as
+begin
+    return case when @arg0 = '' then null else @arg0 end
+end
+go
+
+create function datetime_in(@arg0 varchar(19)) returns datetime_t
+as
+begin
+    return case when @arg0 = '' then null else @arg0 end
+end
+go
+
+create function descr_in(@arg0 varchar(1024)) returns descr_t
+as
+begin
+    return case when @arg0 = '' then null else @arg0 end
+end
+go
+
+create function double_in(@arg0 varchar(20)) returns double_t
+as
+begin
+    return case when @arg0 = '' then null else @arg0 end
+end
+go
+
+create function gps_in(@arg0 varchar(12)) returns gps_t
+as
+begin
+    return case when @arg0 = '' then null else @arg0 end
+end
+go
+
+create function hstore_in(@arg0 varchar(1024)) returns hstore_t
+as
+begin
+    return case when @arg0 = '' then null else @arg0 end
+end
+go
+
+create function int32_in(@arg0 varchar(11)) returns int32_t
+as
+begin
+    return case when @arg0 = '' then null else @arg0 end
+end
+go
+
+create function note_in(@arg0 uid_t) returns note_t
+as
+begin
+    return case when @arg0 = '' then null else @arg0 end
+end
+go
+
+create function uid_in(@arg0 uid_t) returns uid_t
+as
+begin
+    return case when @arg0 = '' then null else @arg0 end
+end
+go
+
+create function uids_in(@arg0 varchar(2048)) returns uids_t
+as
+begin
+    return case when @arg0 = '' then null else @arg0 end
+end
+go
+
+create function wf_in(@arg0 varchar(5)) returns wf_t
+as
+begin
+    return case when @arg0 = '' then null else @arg0 end
+end
+go
+
 
 create table sysparams (
     param_id 		uid_t 		not null primary key,
@@ -954,5 +1445,4 @@ create table sysparams (
 insert into sysparams values('db:id', 'L0', 'omobus-zero-db internal code.');
 insert into sysparams values('gc:keep_alive', '30', 'How many days the data will be hold from cleaning.');
 insert into sysparams values('db:vstamp', '', 'Database version number.');
-
 go

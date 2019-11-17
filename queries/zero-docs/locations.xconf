@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<locations templ="%doc_id%;%fix_dt%;%user_id%;%account_id%;%latitude%;%longitude%;%accuracy%;%dist%;">
+<check_exist>
+  <![CDATA[
+select count(*) exist from locations 
+    where doc_id = '%doc_id%'
+  ]]>
+</check_exist>
+<insert>
+  <![CDATA[
+insert into locations (fix_dt, user_id, account_id, latitude, longitude, accuracy, dist) 
+    values ('%fix_dt%', '%user_id%', '%account_id%', %latitude%, %longitude%, %accuracy%, double_in('%dist%'))
+  ]]>
+</insert>
+</locations>

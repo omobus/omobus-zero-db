@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<deletions templ="%account_id%;%user_id%;%fix_dt%;%note%;%photo%;%validator_id%;%validated%;%hidden%;">
+<check_exist>
+  <![CDATA[
+select count(*) exist from deletions 
+    where account_id = '%account_id%'
+  ]]>
+</check_exist>
+<update>
+  <![CDATA[
+update deletions set user_id='%user_id%', fix_dt='%fix_dt%', note='%note%', photo=uid_in('%photo%'), validator_id=uid_in('%validator_id%'), validated=0%validated%, hidden=0%hidden%
+    where account_id = '%account_id%'
+  ]]>
+</update>
+<insert>
+  <![CDATA[
+insert into deletions (account_id, user_id, fix_dt, note, photo, validator_id, validated, hidden) 
+    values ('%account_id%', '%user_id%', '%fix_dt%', '%note%', uid_in('%photo%'), uid_in('%validator_id%'), 0%validated%, 0%hidden%)
+  ]]>
+</insert>
+</deletions>

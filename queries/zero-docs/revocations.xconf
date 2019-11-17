@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<revocations templ="%doc_id%;%doc_type%;%hidden%;">
+<check_exist>
+  <![CDATA[
+select count(*) exist from revocations 
+    where doc_id = '%doc_id%'
+  ]]>
+</check_exist>
+<update>
+  <![CDATA[
+update revocations set hidden=0%hidden%
+    where doc_id = '%doc_id%'
+  ]]>
+</update>
+<insert>
+  <![CDATA[
+insert into revocations (doc_id, doc_type, hidden) 
+    values ('%doc_id%', '%doc_type%', 0%hidden%)
+  ]]>
+</insert>
+</revocations>
