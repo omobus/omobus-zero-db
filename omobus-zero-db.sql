@@ -86,6 +86,14 @@ create table accounts (
     props 		hstore_t 	null
 );
 
+create table account_kpi (
+    account_id 		uid_t 		not null,
+    kpi_id 		uid_t 		not null,
+    descr0 		descr_t 	null,
+    descr1 		varchar(16) 	null,
+    primary key (account_id, kpi_id)
+);
+
 create table account_params (
     distr_id 		uid_t 		not null,
     account_id 		uid_t 		not null,
@@ -372,6 +380,14 @@ create table my_cities (
     user_id 		uid_t 		not null,
     city_id 		uid_t 		not null,
     primary key (user_id, city_id)
+);
+
+create table my_kpi (
+    account_id 		uid_t 		not null,
+    user_id 		uid_t 		not null,
+    descr0 		descr_t 	null,
+    descr1 		varchar(16) 	null,
+    primary key (user_id, kpi_id)
 );
 
 create table my_regions (

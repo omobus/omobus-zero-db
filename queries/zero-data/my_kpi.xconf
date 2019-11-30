@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<my_kpi templ="%user_id%;%kpi_id%;%descr0%;%descr1%;">
+  <![CDATA[
+select user_id, kpi_id, descr0, descr1 from my_kpi
+    order by 1, 2
+  ]]>
+</my_kpi>
