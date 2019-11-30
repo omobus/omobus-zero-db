@@ -2,6 +2,6 @@
 <group_prices templ="%distr_id%;%group_price_id%;%prod_id%;%pack_id%;%price%;">
   <![CDATA[ 
 select distr_id, group_price_id, prod_id, pack_id, price from group_prices
-    order by 1, 2
+    order by 1, 2, 3
   ]]>
 </group_prices>

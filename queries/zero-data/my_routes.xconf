@@ -2,6 +2,6 @@
 <my_routes templ="%user_id%;%account_id%;%p_date%;%duration%;%row_no%;%activity_type_id%;">
   <![CDATA[
 select user_id, account_id, p_date, row_no, duration, activity_type_id from my_routes
-    order by 1, 2
+    order by 1, 2, 3, 6
   ]]>
 </my_routes>
