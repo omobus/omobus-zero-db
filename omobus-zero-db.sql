@@ -90,7 +90,7 @@ create table account_kpi (
     account_id 		uid_t 		not null,
     kpi_id 		uid_t 		not null,
     descr0 		descr_t 	null,
-    descr1 		varchar(16) 	null,
+    descr1 		descr_t 	null,
     primary key (account_id, kpi_id)
 );
 
@@ -386,7 +386,7 @@ create table my_kpi (
     account_id 		uid_t 		not null,
     user_id 		uid_t 		not null,
     descr0 		descr_t 	null,
-    descr1 		varchar(16) 	null,
+    descr1 		descr_t) 	null,
     primary key (user_id, kpi_id)
 );
 
