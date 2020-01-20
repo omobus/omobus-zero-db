@@ -1,4 +1,4 @@
-/* Copyright (c) 2006 - 2019 omobus-zero-db authors, see the included COPYRIGHT file. */
+/* Copyright (c) 2006 - 2020 omobus-zero-db authors, see the included COPYRIGHT file. */
 
 set QUOTED_IDENTIFIER on
 go
@@ -383,7 +383,7 @@ create table my_cities (
 );
 
 create table my_kpi (
-    account_id 		uid_t 		not null,
+    kpi_id 		uid_t 		not null,
     user_id 		uid_t 		not null,
     descr0 		descr_t 	null,
     descr1 		descr_t) 	null,
@@ -545,7 +545,7 @@ create table pmlist (
 );
 
 create table pos_materials ( /* Point-of-Sale and Point-of-Purchase materials */
-    posm_id 		uid_t 		not null primary key default man_id(),
+    posm_id 		uid_t 		not null primary key,
     descr 		descr_t 	not null,
     "image" 		blob_t 		not null,
     brand_ids 		uids_t 		not null,
@@ -591,11 +591,11 @@ create table quest_names (
 
 create table quest_rows (
     qname_id 		uid_t 		not null,
-    qrow_id 		uid_t 		not null default man_id(),
+    qrow_id 		uid_t 		not null,
     pid 		uid_t 		null,
     ftype 		ftype_t 	not null,
     descr 		descr_t 	not null,
-    qtype 		varchar(7) 	null check(ftype=0 and qtype in ('boolean','integer') or (ftype<>0 and qtype is null)),
+    qtype 		varchar(7) 	null /*check(ftype=0 and qtype in ('boolean','integer') or (ftype<>0 and qtype is null))*/,
     extra_info 		note_t 		null,
     country_ids 	countries_t 	null,
     row_no 		int32_t 	null, -- ordering
@@ -607,8 +607,8 @@ create table rating_criterias (
     pid 		uid_t 		null,
     ftype 		bool_t 		not null,
     descr 		descr_t 	not null,
-    wf 			wf_t 		null check((ftype=0 and wf is not null and wf between 0.01 and 1.00) or (ftype<>0 and wf is null)),
-    mandatory 		bool_t 		null check((ftype=0 and mandatory is not null) or (ftype<>0 and mandatory is null)),
+    wf 			wf_t 		null /*check((ftype=0 and wf is not null and wf between 0.01 and 1.00) or (ftype<>0 and wf is null))*/,
+    mandatory 		bool_t 		null /*check((ftype=0 and mandatory is not null) or (ftype<>0 and mandatory is null))*/,
     extra_info 		note_t 		null,
     row_no 		int32_t 	null
 );
@@ -1114,7 +1114,7 @@ create table locations (
     latitude 		gps_t 		not null,
     longitude 		gps_t 		not null,
     accuracy 		double_t 	not null,
-    distr 		double_t 	null
+    dist 		double_t 	null,
     inserted_ts 	ts_t 		not null default current_timestamp
 );
 
