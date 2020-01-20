@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rules templ="%doc_type%;%role%;%frequency%;%account_ids%;%rc_ids%;%chan_ids%;%poten_ids%;%region_ids%;%city_ids%;">
   <![CDATA[
-select doc_type, role, frequen, account_ids, rc_ids, chan_ids, poten_ids, region_ids, city_ids from rules
+select doc_type, role, frequency, account_ids, rc_ids, chan_ids, poten_ids, region_ids, city_ids from rules
     order by 1, 2
   ]]>
 </rules>
