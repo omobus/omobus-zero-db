@@ -6,6 +6,7 @@ declare @offset int
 select @offset=cast(param_value as int) from sysparams where param_id='gc:keep_alive'
 
 delete from additions where inserted_ts < (getdate() - @offset)
+delete from cancellations where inserted_ts < (getdate() - @offset)
 delete from comments where inserted_ts < (getdate() - @offset)
 delete from deletions where inserted_ts < (getdate() - @offset)
 delete from discards where inserted_ts < (getdate() - @offset)
