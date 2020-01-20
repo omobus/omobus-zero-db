@@ -8,14 +8,14 @@ select count(*) exist from user_activities
 </check_exist>
 <update>
   <![CDATA[
-update user_activities set e_dt=datetime_in('%e_dt%'), e_la=gps_in('%e_la%'), e_lo=gps_in('%e_lo%'), e_sat_dt=datetime_in('%e_sat_dt%'), employee_id=uid_in('%employee_id%'), extra_info=note_in('%extra_info%'), docs=int32_in('%docs%')
+update user_activities set e_dt=dbo.datetime_in('%e_dt%'), e_la=dbo.gps_in('%e_la%'), e_lo=dbo.gps_in('%e_lo%'), e_sat_dt=dbo.datetime_in('%e_sat_dt%'), employee_id=dbo.uid_in('%employee_id%'), extra_info=dbo.note_in('%extra_info%'), docs=dbo.int32_in('%docs%')
     where user_id = '%user_id%' and account_id = '%account_id%' and activity_type_id = '%activity_type_id%' and w_cookie = '%w_cookie%' and a_cookie = '%a_cookie%'
   ]]>
 </update>
 <insert>
   <![CDATA[
 insert into user_activities (user_id, account_id, w_cookie, a_cookie, activity_type_id, fix_date, route_date, b_dt, b_la, b_lo, b_sat_dt, e_dt, e_la, e_lo, e_sat_dt, employee_id, extra_info, docs) 
-    values ('%user_id%', '%account_id%', '%w_cookie%', '%a_cookie%', '%activity_type_id%', '%fix_date%', '%route_date%', '%b_dt%', gps_in('%b_la%'), gps_in('%b_lo%'), datetime_in('%b_sat_dt%'), datetime_in('%e_dt%'), gps_in('%e_la%'), gps_in('%e_lo%'), datetime_in('%e_sat_dt%'), uid_in('%employee_id%'), note_in('%extra_info%'), int32_in('%docs%'))
+    values ('%user_id%', '%account_id%', '%w_cookie%', '%a_cookie%', '%activity_type_id%', '%fix_date%', '%route_date%', '%b_dt%', dbo.gps_in('%b_la%'), dbo.gps_in('%b_lo%'), dbo.datetime_in('%b_sat_dt%'), dbo.datetime_in('%e_dt%'), dbo.gps_in('%e_la%'), dbo.gps_in('%e_lo%'), dbo.datetime_in('%e_sat_dt%'), dbo.uid_in('%employee_id%'), dbo.note_in('%extra_info%'), dbo.int32_in('%docs%'))
   ]]>
 </insert>
 </user_activities>

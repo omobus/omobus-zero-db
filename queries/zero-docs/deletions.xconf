@@ -8,14 +8,14 @@ select count(*) exist from deletions
 </check_exist>
 <update>
   <![CDATA[
-update deletions set user_id='%user_id%', fix_dt='%fix_dt%', note='%note%', photo=uid_in('%photo%'), validator_id=uid_in('%validator_id%'), validated=0%validated%, hidden=0%hidden%
+update deletions set user_id='%user_id%', fix_dt='%fix_dt%', note='%note%', photo=dbo.uid_in('%photo%'), validator_id=dbo.uid_in('%validator_id%'), validated=0%validated%, hidden=0%hidden%
     where account_id = '%account_id%'
   ]]>
 </update>
 <insert>
   <![CDATA[
 insert into deletions (account_id, user_id, fix_dt, note, photo, validator_id, validated, hidden) 
-    values ('%account_id%', '%user_id%', '%fix_dt%', '%note%', uid_in('%photo%'), uid_in('%validator_id%'), 0%validated%, 0%hidden%)
+    values ('%account_id%', '%user_id%', '%fix_dt%', '%note%', dbo.uid_in('%photo%'), dbo.uid_in('%validator_id%'), 0%validated%, 0%hidden%)
   ]]>
 </insert>
 </deletions>

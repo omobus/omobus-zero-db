@@ -9,7 +9,7 @@ select count(*) exist from comments
 <insert>
   <![CDATA[
 insert into comments (doc_id, fix_dt, user_id, account_id, comment_type_id, doc_note, photo) 
-    values ('%doc_id%', '%fix_dt%', '%user_id%', '%account_id%', '%comment_type_id%', '%doc_note%', uid_in('%photo%'))
+    values ('%doc_id%', '%fix_dt%', '%user_id%', '%account_id%', '%comment_type_id%', '%doc_note%', dbo.uid_in('%photo%'))
   ]]>
 </insert>
 </comments>

@@ -9,7 +9,7 @@ select count(*) exist from presentations
 <insert>
   <![CDATA[
 insert into presentations (doc_id, fix_dt, user_id, account_id, participants, tm_ids, doc_note, photos) 
-    values ('%doc_id%', '%fix_dt%', '%user_id%', '%account_id%', %participants%, uids_in('%tm_ids%'), note_in('%doc_note%'), uids_in('%photos%'))
+    values ('%doc_id%', '%fix_dt%', '%user_id%', '%account_id%', %participants%, dbo.uids_in('%tm_ids%'), dbo.note_in('%doc_note%'), dbo.uids_in('%photos%'))
   ]]>
 </insert>
 </presentations>

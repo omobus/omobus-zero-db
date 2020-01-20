@@ -8,8 +8,8 @@ select count(*) exist from locations
 </check_exist>
 <insert>
   <![CDATA[
-insert into locations (fix_dt, user_id, account_id, latitude, longitude, accuracy, dist) 
-    values ('%fix_dt%', '%user_id%', '%account_id%', %latitude%, %longitude%, %accuracy%, double_in('%dist%'))
+insert into locations (doc_id, fix_dt, user_id, account_id, latitude, longitude, accuracy, dist) 
+    values ('%doc_id%', '%fix_dt%', '%user_id%', '%account_id%', %latitude%, %longitude%, %accuracy%, dbo.double_in('%dist%'))
   ]]>
 </insert>
 </locations>

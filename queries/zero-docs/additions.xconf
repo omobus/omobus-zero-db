@@ -8,14 +8,14 @@ select count(*) exist from additions
 </check_exist>
 <update>
   <![CDATA[
-update additions set user_id='%user_id%', fix_dt='%fix_dt%', account='%account%', address='%address%', legal_address='%legal_address%', number='%number%', addition_type_id='%addition_type_id%', note='%note%', chan_id='%chan_id%', attr_ids=uids_in('%attr_ids%'), photos=uids_in('%photos%'), account_id='%account_id%', validator_id=uid_in('%validator_id%'), validated=0%validated%, hidden=0%hidden%, geo_address='%geo_address%'
+update additions set user_id='%user_id%', fix_dt='%fix_dt%', account='%account%', address='%address%', legal_address='%legal_address%', number='%number%', addition_type_id='%addition_type_id%', note='%note%', chan_id='%chan_id%', attr_ids=dbo.uids_in('%attr_ids%'), photos=dbo.uids_in('%photos%'), account_id='%account_id%', validator_id=dbo.uid_in('%validator_id%'), validated=0%validated%, hidden=0%hidden%, geo_address='%geo_address%'
     where doc_id = '%doc_id%'
   ]]>
 </update>
 <insert>
   <![CDATA[
 insert into additions (doc_id, user_id, fix_dt, account, address, legal_address, number, addition_type_id, note, chan_id, attr_ids, photos, account_id, validator_id, validated, hidden, geo_address) 
-    values ('%doc_id%', '%user_id%', '%fix_dt%', '%account%', '%address%', '%legal_address%', '%number%', '%addition_type_id%', '%note%', '%chan_id%', uids_in('%attr_ids%'), uids_in('%photos%'), '%account_id%', uid_in('%validator_id%'), 0%validated%, 0%hidden%, '%geo_address%')
+    values ('%doc_id%', '%user_id%', '%fix_dt%', '%account%', '%address%', '%legal_address%', '%number%', '%addition_type_id%', '%note%', '%chan_id%', dbo.uids_in('%attr_ids%'), dbo.uids_in('%photos%'), '%account_id%', dbo.uid_in('%validator_id%'), 0%validated%, 0%hidden%, '%geo_address%')
   ]]>
 </insert>
 </additions>

@@ -9,7 +9,7 @@ select count(*) exist from user_locations
 <insert>
   <![CDATA[
 insert into user_locations (act_id, row_no, user_id, fix_date, latitude, longitude, fix_dt, satellite_dt, accuracy, altitude, bearing, speed, seconds, provider, satellites) 
-    values ('%act_id%', %row_no%, '%user_id%', '%fix_date%', %latitude%, %longitude%, '%fix_dt%', '%satellite_dt%', %accuracy%, %altitude%, %bearing%, %speed%, int32_in('%seconds%'), '%provider%', '%satellites%')
+    values ('%act_id%', %row_no%, '%user_id%', '%fix_date%', %latitude%, %longitude%, '%fix_dt%', '%satellite_dt%', %accuracy%, %altitude%, %bearing%, %speed%, dbo.int32_in('%seconds%'), '%provider%', '%satellites%')
   ]]>
 </insert>
 </user_locations>

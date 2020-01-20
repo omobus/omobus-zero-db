@@ -4,7 +4,7 @@
     ldap.uri="ldap://127.0.0.1:389" 
     ldap.bind_dn="uid=omobusd,ou=services,dc=omobus,dc=local"
     ldap.bind_pw="0"
-    ldap.base="ou=proxy-db,dc=omobus,dc=local" 
+    ldap.base="ou=zero-db,dc=omobus,dc=local" 
     ldap.filter="(&amp;(objectClass=PureFTPdUser)(objectClass=omobusMaintainPoint)(FTPStatus=enabled)(exchangeStatus=enabled))"
     Xldap.tls="yes"
     ftp.host="127.0.0.1"
@@ -22,6 +22,7 @@
     >
 <xi:include href="../queries/zero-docs/activity_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-docs/additions.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-docs/cancellations.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-docs/comments.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-docs/deletions.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-docs/discards.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
