@@ -729,9 +729,6 @@ create table sales_history (
     amount_r 		currency_t 	null,
     pack_r_id 		uid_t 		null,
     qty_r 		int32_t 	null,
-    color 		int32_t 	null,
-    bgcolor 		int32_t 	null,
-    extra_info 		note_t 		null,
     primary key (account_id, prod_id, s_date)
 );
 
@@ -761,7 +758,6 @@ create table symlinks ( /* distribution of brands on the shelf in the category *
     obj_code 		code_t 		not null,
     f_id 		uid_t 		not null,
     t_id 		uid_t 		not null,
-    extra_info 		note_t 		null,
     primary key(distr_id, obj_code, f_id)
 );
 
