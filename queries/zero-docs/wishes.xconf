@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wishes templ="%account_id%;%user_id%;%fix_dt%;%wish_week_id%;%wish_day_id%;%note%;%validator_id%;%validated%;%hidden%;">
+<check_exist>
+  <![CDATA[
+select count(*) exist from wishes 
+    where account_id = '%account_id%' and user_id = '%user_id%'
+  ]]>
+</check_exist>
+<update>
+  <![CDATA[
+update wishes set fix_dt='%fix_dt%', wish_week_id='%wish_week_id%', wish_day_id='%wish_day_id%', note='%note%', validator_id='%validator_id%', validated=0%validated%, hidden=0%hidden%
+    where account_id = '%account_id%' and user_id = '%user_id%'
+  ]]>
+</update>
+<insert>
+  <![CDATA[
+insert into wishes (account_id, user_id, fix_dt, wish_week_id, wish_day_id, note, validator_id, validated, hidden) 
+    values ('%account_id%', '%user_id%', '%fix_dt%', '%wish_week_id%', '%wish_day_id%', '%note%', '%validator_id%', 0%validated%, 0%hidden%)
+  ]]>
+</insert>
+</wishes>
