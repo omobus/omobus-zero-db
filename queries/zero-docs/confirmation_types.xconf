@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<confirmation_types templ="%confirmation_type_id%;%descr%;%target_type_ids%;">
+<begin>
+  <![CDATA[
+update confirmation_types set hidden=1
+    where hidden = 0
+  ]]>
+</begin>
+<check_exist>
+  <![CDATA[
+select count(*) exist from confirmation_types
+    where confirmation_type_id = '%confirmation_type_id%'
+  ]]>
+</check_exist>
+<update>
+  <![CDATA[
+update confirmation_types set descr='%descr%', target_type_ids=dbo.uids_in('%target_type_ids%'), hidden=0
+    where confirmation_type_id = '%confirmation_type_id%'
+  ]]>
+</update>
+<insert>
+  <![CDATA[
+insert into confirmation_types (confirmation_type_id, descr, target_type_ids, hidden)
+    values ('%confirmation_type_id%', '%descr%', dbo.uids_in('%target_type_ids%'), 0)
+  ]]>
+</insert>
+</confirmation_types>

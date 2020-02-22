@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<confirmations templ="%doc_id%;%fix_dt%;%user_id%;%account_id%;%target_id%;%confirmation_type_id%;%doc_note%;%photos%;">
+<check_exist>
+  <![CDATA[
+select count(*) exist from confirmations
+    where doc_id = '%doc_id%'
+  ]]>
+</check_exist>
+<insert>
+  <![CDATA[
+insert into confirmations (doc_id, fix_dt, user_id, account_id, target_id, confirmation_type_id, doc_note, photos)
+    values ('%doc_id%', '%fix_dt%', '%user_id%', '%account_id%', '%target_id%', '%confirmation_type_id%', '%doc_note%', dbo.uids_in('%photos%'))
+  ]]>
+</insert>
+</confirmations>

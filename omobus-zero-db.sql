@@ -862,7 +862,8 @@ create table activity_types (
     activity_type_id 	uid_t 		not null primary key,
     descr 		descr_t 	not null,
     strict 		bool_t 		not null default 0, /* sets to 1 (true) for direct visits to the accounts */
-    hidden 		bool_t 		not null default 0
+    hidden 		bool_t 		not null default 0,
+    inserted_ts 	ts_t 		not null default current_timestamp
 );
 
 create table additions (
@@ -904,6 +905,26 @@ create table comments (
     comment_type_id 	uid_t 		not null,
     doc_note 		note_t 		null,
     photo		uid_t		null,
+    inserted_ts 	ts_t 		not null default current_timestamp
+);
+
+create table confirmation_types (
+    confirmation_type_id uid_t 		not null primary key,
+    descr 		descr_t 	not null,
+    target_type_ids 	uids_t 		not null,
+    hidden 		bool_t 		not null default 0,
+    inserted_ts 	ts_t 		not null default current_timestamp
+);
+
+create table confirmations (
+    doc_id 		uid_t 		not null primary key,
+    fix_dt 		datetime_t 	not null,
+    user_id 		uid_t 		not null,
+    account_id 		uid_t 		not null,
+    target_id 		uid_t 		not null,
+    confirmation_type_id uid_t 		not null,
+    doc_note 		note_t 		null,
+    photos		uids_t		null,
     inserted_ts 	ts_t 		not null default current_timestamp
 );
 
@@ -1224,7 +1245,8 @@ create table revocations (
 create table target_types (
     target_type_id 	uid_t 		not null primary key,
     descr 		descr_t 	not null,
-    hidden 		bool_t 		not null default 0
+    hidden 		bool_t 		not null default 0,
+    inserted_ts 	ts_t 		not null default current_timestamp
 );
 
 create table trainings (
