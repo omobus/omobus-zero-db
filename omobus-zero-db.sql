@@ -130,6 +130,7 @@ create table agreements1 (
     b_date 		date_t 		not null,
     e_date 		date_t 		not null,
     strict 		bool_t 		not null default 0,
+    cookie 		uid_t 		null,
     primary key (account_id, placement_id, posm_id, b_date)
 );
 
