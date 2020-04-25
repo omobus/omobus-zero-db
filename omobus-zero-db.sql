@@ -273,9 +273,8 @@ create table discounts (
 
 create table distributors (
     distr_id 		uid_t 		not null primary key,
-    pid 		uid_t 		null,
     descr 		descr_t 	not null,
-    country_id 		uid_t 		null
+    country_id 		uid_t 		not null
 );
 
 create table equipment_types (
@@ -700,10 +699,9 @@ create table restrictions (
 
 create table retail_chains (
     rc_id 		uid_t 		not null primary key,
-    pid 		uid_t 		null,
     descr 		descr_t 	not null,
     ka_code 		code_t 		null, /* Key Account: NKA, KA, ... */
-    country_id 		country_t 	null
+    country_id 		country_t 	not null
 );
 
 create table rules (
