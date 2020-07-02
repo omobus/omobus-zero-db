@@ -796,6 +796,13 @@ create table testing_scores (
     row_no 		int32_t 	null
 );
 
+create table training_types (
+    training_type_id 	uid_t 		not null primary key,
+    descr 		descr_t 	not null,
+    dep_id 		uid_t 		null,
+    row_no 		int32_t 	null -- ordering,
+);
+
 create table unsched_types (
     unsched_type_id 	uid_t 		not null primary key,
     descr 		descr_t 	not null,
@@ -864,6 +871,7 @@ create table wish_weeks (
     wish_week_id 	uid_t 		not null primary key,
     descr 		descr_t 	not null,
     weeks 		char(7) 	not null default '0,0,0,0',
+    dep_id 		uid_t 		null,
     row_no 		int32_t 	null -- ordering,
 );
 
