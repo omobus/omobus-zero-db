@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<oos_types templ="%oos_type_id%;%descr%;%row_no%;">
+<oos_types templ="%oos_type_id%;%descr%;%dep_id%;%row_no%;">
   <![CDATA[
-select oos_type_id, descr, row_no from oos_types
+select oos_type_id, descr, dep_id, row_no from oos_types
     order by 1
   ]]>
 </oos_types>

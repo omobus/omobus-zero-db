@@ -446,6 +446,7 @@ create table mutuals_history_products (
 create table oos_types (
     oos_type_id 	uid_t 		not null primary key,
     descr 		descr_t 	not null,
+    dep_id 		uid_t 		null,
     row_no 		int32_t 	null -- ordering
 );
 
