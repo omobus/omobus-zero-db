@@ -379,7 +379,8 @@ create table my_accounts (
 create table my_cities (
     user_id 		uid_t 		not null,
     city_id 		uid_t 		not null,
-    primary key (user_id, city_id)
+    chan_id 		uid_t 		not null default '',
+    primary key (user_id, city_id, chan_id)
 );
 
 create table my_kpi (
@@ -393,7 +394,8 @@ create table my_kpi (
 create table my_regions (
     user_id 		uid_t 		not null,
     region_id 		uid_t 		not null,
-    primary key (user_id, region_id)
+    chan_id 		uid_t 		not null default '',
+    primary key (user_id, region_id, chan_id)
 );
 
 create table my_retail_chains (
