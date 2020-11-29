@@ -864,21 +864,6 @@ create table wareh_stocks (
     primary key (distr_id, wareh_id, prod_id)
 );
 
-create table wish_days (
-    wish_day_id 	uid_t 		not null primary key,
-    descr 		descr_t 	not null,
-    days 		char(13) 	not null default '0,0,0,0,0,0,0',
-    row_no 		int32_t 	null -- ordering,
-);
-
-create table wish_weeks (
-    wish_week_id 	uid_t 		not null primary key,
-    descr 		descr_t 	not null,
-    weeks 		char(7) 	not null default '0,0,0,0',
-    dep_id 		uid_t 		null,
-    row_no 		int32_t 	null -- ordering,
-);
-
 go
 
 
@@ -1035,8 +1020,8 @@ create table wishes (
     account_id  	uid_t 		not null,
     user_id		uid_t 		not null,
     fix_dt		datetime_t 	not null,
-    wish_week_id 	uid_t 		not null,
-    wish_day_id 	uid_t 		not null,
+    weeks 		char(7) 	not null default '0,0,0,0',
+    days 		char(13) 	not null default '0,0,0,0,0,0,0',
     note		note_t		null,
     validator_id 	uid_t		null,
     validated 		bool_t 		not null default 0,
