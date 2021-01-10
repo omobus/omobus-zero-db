@@ -16,7 +16,7 @@ and password "0". Don't forget to change default password.
 
 # LICENSE
 
-Copyright (c) 2006 - 2020 ak-obs, Ltd. <info@omobus.net>.
+Copyright (c) 2006 - 2021 ak-obs, Ltd. <info@omobus.net>.
 All rights reserved.
 
 This program is a free software. Redistribution and use in source

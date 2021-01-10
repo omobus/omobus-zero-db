@@ -1,4 +1,4 @@
-/* Copyright (c) 2006 - 2020 omobus-zero-db authors, see the included COPYRIGHT file. */
+/* Copyright (c) 2006 - 2021 omobus-zero-db authors, see the included COPYRIGHT file. */
 
 set QUOTED_IDENTIFIER on
 go
