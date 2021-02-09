@@ -80,10 +80,6 @@ insert into rating_scores(rating_score_id, descr, score, wf) values('0', '<b>О�
 insert into rating_scores(rating_score_id, descr, score, wf) values('1', '<b>Оценка: 1 балл</b> (имеются незначительные недостатки)', 1, 0.5);
 insert into rating_scores(rating_score_id, descr, score, wf) values('2', '<b>Оценка: 2 балла</b> (недостатки не обнаружены)', 2, 1);
 
-delete from receipt_types;
-insert into receipt_types(receipt_type_id, descr) values('0', 'Основной платеж');
-insert into receipt_types(receipt_type_id, descr) values('1', 'Платеж по второй схеме');
-
 delete from reclamation_types;
 insert into reclamation_types(reclamation_type_id, descr) values('0', 'Повреждение упаковки');
 insert into reclamation_types(reclamation_type_id, descr) values('1', 'Нарушение комплектации');

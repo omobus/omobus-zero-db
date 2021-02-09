@@ -631,11 +631,6 @@ create table rdd (
     primary key(distr_id, obj_code)
 );
 
-create table receipt_types (
-    receipt_type_id 	uid_t 		not null primary key,
-    descr 		descr_t 	not null
-);
-
 create table reclamation_types (
     reclamation_type_id uid_t 		not null primary key,
     descr 		descr_t 	not null
@@ -968,20 +963,6 @@ create table orders (
     volume 		volume_t 	not null,
     inserted_ts 	ts_t 		not null default current_timestamp,
     primary key (doc_id, prod_id)
-);
-
-create table receipts (
-    doc_id 		uid_t 		not null primary key,
-    fix_dt 		datetime_t 	not null,
-    doc_no 		uid_t 		not null,
-    user_id 		uid_t 		not null,
-    dev_login 		uid_t 		not null,
-    account_id 		uid_t 		not null,
-    distr_id 		uid_t 		not null,
-    receipt_type_id 	uid_t 		null,
-    doc_note 		note_t 		null,
-    amount 		numeric_t 	not null,
-    inserted_ts 	ts_t 		not null default current_timestamp
 );
 
 create table reclamations (

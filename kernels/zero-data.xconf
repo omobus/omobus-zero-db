@@ -92,7 +92,6 @@
 <xi:include href="../queries/zero-data/rating_criterias.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/rating_scores.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/rdd.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
-<xi:include href="../queries/zero-data/receipt_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/reclamation_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/recom_orders.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/recom_retail_prices.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
@@ -186,7 +185,6 @@
     <rating_criterias />
     <rating_scores />
     <rdd />
-    <receipt_types />
     <reclamation_types />
     <recom_orders />
     <recom_retail_prices />
