@@ -7,7 +7,6 @@ select @offset=cast(param_value as int) from sysparams where param_id='gc:keep_a
 
 delete from additions where inserted_ts < (getdate() - @offset)
 delete from deletions where inserted_ts < (getdate() - @offset)
-delete from discards where inserted_ts < (getdate() - @offset)
 delete from locations where inserted_ts < (getdate() - @offset)
 delete from orders where inserted_ts < (getdate() - @offset)
 delete from reclamations where inserted_ts < (getdate() - @offset)
