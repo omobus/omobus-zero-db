@@ -109,8 +109,6 @@
 <xi:include href="../queries/zero-data/std_prices.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/symlinks.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/targets.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
-<xi:include href="../queries/zero-data/testing_criterias.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
-<xi:include href="../queries/zero-data/testing_scores.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/training_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/unsched_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/users.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
@@ -202,8 +200,6 @@
     <std_prices />
     <symlinks />
     <targets />
-    <testing_criterias />
-    <testing_scores />
     <training_types />
     <unsched_types />
     <users />

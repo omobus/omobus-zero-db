@@ -86,9 +86,4 @@ insert into reclamation_types(reclamation_type_id, descr) values('1', 'Нару�
 insert into reclamation_types(reclamation_type_id, descr) values('2', 'Брак');
 insert into reclamation_types(reclamation_type_id, descr) values('3', 'Истек срок годности');
 
-delete from testing_scores;
-insert into testing_scores(testing_score_id, descr, score, wf) values('0', '<b>Оценка: 0 баллов</b> (имеются серьезные недостатки)', 0, 0);
-insert into testing_scores(testing_score_id, descr, score, wf) values('1', '<b>Оценка: 1 балл</b> (имеются незначительные недостатки)', 1, 0.5);
-insert into testing_scores(testing_score_id, descr, score, wf) values('2', '<b>Оценка: 2 балла</b> (недостатки не обнаружены)', 2, 1);
-
 go

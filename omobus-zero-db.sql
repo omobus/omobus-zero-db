@@ -776,25 +776,6 @@ create table targets (
     props 		hstore_t 	null
 );
 
-create table testing_criterias (
-    testing_criteria_id uid_t 		not null primary key,
-    pid 		uid_t 		null,
-    ftype 		bool_t 		not null,
-    descr 		descr_t 	not null,
-    wf 			wf_t 		not null check(wf between 0.01 and 1.00),
-    mandatory 		bool_t 		not null,
-    extra_info 		note_t 		null,
-    row_no 		int32_t 	null
-);
-
-create table testing_scores (
-    testing_score_id 	uid_t 		not null primary key,
-    descr 		descr_t 	not null,
-    score 		int32_t 	not null,
-    wf 			wf_t 		not null check(wf between 0.00 and 1.00),
-    row_no 		int32_t 	null
-);
-
 create table training_types (
     training_type_id 	uid_t 		not null primary key,
     descr 		descr_t 	not null,
