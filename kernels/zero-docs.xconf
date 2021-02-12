@@ -23,7 +23,6 @@
 <xi:include href="../queries/zero-docs/activity_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-docs/additions.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-docs/deletions.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
-<xi:include href="../queries/zero-docs/discards.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-docs/locations.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-docs/orders.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-docs/reclamations.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />

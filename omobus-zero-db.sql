@@ -884,21 +884,6 @@ create table deletions (
     inserted_ts 	ts_t 		not null default current_timestamp
 );
 
-create table discards (
-    account_id  	uid_t 		not null,
-    user_id		uid_t 		not null,
-    fix_dt		datetime_t 	not null,
-    activity_type_id 	uid_t 		not null,
-    discard_type_id 	uid_t 		null,
-    route_date 		date_t 		not null,
-    note		note_t		null,
-    validator_id 	uid_t		null,
-    validated 		bool_t 		not null default 0,
-    hidden 		bool_t 		not null default 0,
-    inserted_ts 	ts_t 		not null default current_timestamp,
-    primary key(account_id, user_id, activity_type_id, route_date)
-);
-
 create table locations (
     doc_id 		uid_t 		not null primary key,
     fix_dt 		datetime_t 	not null,
