@@ -1,7 +1,7 @@
 # Copyright (c) 2006 - 2021 omobus-zero-db authors, see the included COPYRIGHT file.
 
 PACKAGE_NAME 	= omobus-zero-db
-PACKAGE_VERSION = 3.5.5
+PACKAGE_VERSION = 3.5.6
 COPYRIGHT 	= Copyright (c) 2006 - 2021 ak obs, ltd. <info@omobus.net>
 SUPPORT 	= Support and bug reports: <support@omobus.net>
 AUTHOR		= Author: Igor Artemov <i_artemov@ak-obs.ru>
