@@ -699,7 +699,7 @@ create table restrictions (
 create table retail_chains (
     rc_id 		uid_t 		not null primary key,
     descr 		descr_t 	not null,
-    ka_code 		code_t 		null, /* Key Account: NKA, KA, ... */
+    ka_type 		code_t 		null, /* Key Account: NKA, KA, ... */
     country_id 		country_t 	not null
 );
 
