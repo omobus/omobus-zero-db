@@ -184,7 +184,6 @@ create table brands (
     brand_id 		uid_t 		not null primary key,
     descr 		descr_t 	not null,
     manuf_id 		uid_t 		not null,
-    dep_id 		uid_t 		null,
     row_no 		int32_t 	null
 );
 
@@ -448,7 +447,7 @@ create table mutuals_history_products (
 create table oos_types (
     oos_type_id 	uid_t 		not null primary key,
     descr 		descr_t 	not null,
-    dep_id 		uid_t 		null,
+    dep_ids 		uids_t 		null,
     row_no 		int32_t 	null -- ordering
 );
 
@@ -554,6 +553,7 @@ create table pos_materials ( /* Point-of-Sale and Point-of-Purchase materials */
     placement_ids 	uids_t 		null,
     chan_ids 		uids_t 		null,
     country_id		country_t 	not null,
+    dep_ids 		uids_t 		null,
     b_date 		date_t 		null,
     e_date 		date_t 		null
 );
@@ -609,7 +609,7 @@ create table rating_criterias (
     pid 		uid_t 		null,
     ftype 		bool_t 		not null,
     descr 		descr_t 	not null,
-    dep_id 		uid_t 		null,
+    dep_ids 		uids_t 		null,
     wf 			wf_t 		null /*check((ftype=0 and wf is not null and wf between 0.01 and 1.00) or (ftype<>0 and wf is null))*/,
     mandatory 		bool_t 		null /*check((ftype=0 and mandatory is not null) or (ftype<>0 and mandatory is null))*/,
     extra_info 		note_t 		null,
@@ -779,7 +779,7 @@ create table targets (
 create table training_types (
     training_type_id 	uid_t 		not null primary key,
     descr 		descr_t 	not null,
-    dep_id 		uid_t 		null,
+    dep_ids 		uids_t 		null,
     row_no 		int32_t 	null -- ordering,
 );
 
