@@ -147,6 +147,7 @@ create table agreements2 (
 create table asp_types (
     asp_type_id 	uid_t 		not null primary key,
     descr 		descr_t 	not null,
+    extra_info 		note_t 		null,
     placement_ids 	uids_t 		null,
     country_ids 	countries_t 	null,
     dep_ids 		uids_t 		null,
@@ -525,6 +526,7 @@ create table photo_params (
 create table photo_types (
     photo_type_id 	uid_t 		not null primary key,
     descr 		descr_t 	not null,
+    extra_info 		note_t 		null,
     placement_ids 	uids_t 		null,
     country_ids 	countries_t 	null,
     dep_ids 		uids_t 		null,
