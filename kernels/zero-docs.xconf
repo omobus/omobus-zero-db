@@ -26,6 +26,5 @@
 <xi:include href="../queries/zero-docs/locations.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-docs/orders.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-docs/reclamations.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
-<xi:include href="../queries/zero-docs/target_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-docs/wishes.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 </kernel>
