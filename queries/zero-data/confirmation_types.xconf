@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<confirmation_types templ="%confirmation_type_id%;%descr%;%min_note_length%;%photo_needed%;%accomplished%;%succeeded%;%extra_info%;%target_type_ids%;%row_no%;%props%;">
+  <![CDATA[ 
+select confirmation_type_id, descr, min_note_length, photo_needed, accomplished, succeeded, extra_info, target_type_ids, row_no, props from confirmation_types
+    order by 1
+  ]]>
+</confirmation_types>

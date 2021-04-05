@@ -227,6 +227,19 @@ create table comment_types (
     row_no 		int32_t 	null
 );
 
+create table confirmation_types (
+    confirmation_type_id uid_t 		not null primary key,
+    descr 		descr_t 	not null,
+    min_note_length 	int32_t 	null,
+    photo_needed 	bool_t 		null,
+    accomplished 	bool_t 		null,
+    succeeded 		bool_t 		null,
+    extra_info 		note_t 		null,
+    target_type_ids 	uids_t 		not null,
+    row_no 		int32_t 	null, -- ordering
+    props 		hstore_t 	null
+);
+
 create table contacts (
     contact_id 		uid_t 		not null primary key,
     account_id 		uid_t 		not null,
