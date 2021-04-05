@@ -787,11 +787,18 @@ create table targets (
     props 		hstore_t 	null
 );
 
+create table target_types (
+    target_type_id 	uid_t 		not null primary key,
+    descr 		descr_t 	not null,
+    selectable 		bool_t 		not null,
+    row_no 		int32_t 	null -- ordering
+);
+
 create table training_types (
     training_type_id 	uid_t 		not null primary key,
     descr 		descr_t 	not null,
     dep_ids 		uids_t 		null,
-    row_no 		int32_t 	null -- ordering,
+    row_no 		int32_t 	null -- ordering
 );
 
 create table unsched_types (
@@ -965,13 +972,6 @@ create table reclamations (
     volume 		volume_t 	not null,
     inserted_ts 	ts_t 		not null default current_timestamp,
     primary key (doc_id, prod_id)
-);
-
-create table target_types (
-    target_type_id 	uid_t 		not null primary key,
-    descr 		descr_t 	not null,
-    hidden 		bool_t 		not null default 0,
-    inserted_ts 	ts_t 		not null default current_timestamp
 );
 
 create table wishes (
