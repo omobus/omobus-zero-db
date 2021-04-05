@@ -50,7 +50,7 @@ execute sp_addtype emails_t, 'varchar(4096)'
 execute sp_addtype ftype_t, 'smallint'
 execute sp_addtype gps_t, 'numeric(10,6)'
 execute sp_addtype hostname_t, 'varchar(255)'
-execute sp_addtype hstore_t, 'varchar(1024)'
+execute sp_addtype hstore_t, 'varchar(4096)'
 execute sp_addtype int32_t, 'int'
 execute sp_addtype int64_t, 'bigint'
 execute sp_addtype message_t, 'varchar(4096)'
@@ -151,7 +151,8 @@ create table asp_types (
     placement_ids 	uids_t 		null,
     country_ids 	countries_t 	null,
     dep_ids 		uids_t 		null,
-    row_no 		int32_t 	null -- ordering
+    row_no 		int32_t 	null, -- ordering
+    props 		hstore_t 	null
 );
 
 create table attributes (
