@@ -157,7 +157,8 @@ create table asp_types (
 
 create table attributes (
     attr_id 		uid_t 		not null primary key,
-    descr 		descr_t 	not null
+    descr 		descr_t 	not null,
+    row_no 		int32_t 	null, -- ordering
 );
 
 create table audit_criterias (
