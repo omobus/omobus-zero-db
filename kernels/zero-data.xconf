@@ -66,6 +66,7 @@
 <xi:include href="../queries/zero-data/mutuals_history_products.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/my_accounts.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/my_cities.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/my_habitats.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/my_kpi.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/my_regions.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/my_retail_chains.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
@@ -162,6 +163,7 @@
     <mutuals_history_products />
     <my_accounts />
     <my_cities />
+    <my_habitats />
     <my_regions />
     <my_retail_chains />
     <my_routes />

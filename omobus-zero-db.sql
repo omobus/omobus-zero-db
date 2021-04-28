@@ -401,6 +401,12 @@ create table my_cities (
     primary key (user_id, city_id, chan_id)
 );
 
+create table my_habitats (
+    user_id 		uid_t 		not null,
+    account_id 		uid_t 		not null,
+    primary key (user_id, account_id)
+);
+
 create table my_kpi (
     kpi_id 		uid_t 		not null,
     user_id 		uid_t 		not null,
