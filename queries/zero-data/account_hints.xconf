@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<account_hints templ="%account_id%;%join_code%;%descr0%;%descr1%;%extra_info%;%attention%;%row_no%;">
+  <![CDATA[
+select account_id, joint_code, descr0, descr1, extra_info, attention, row_no from account_hints
+    order by 1, 2
+  ]]>
+</account_hints>

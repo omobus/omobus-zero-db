@@ -86,7 +86,7 @@ create table accounts (
     props 		hstore_t 	null
 );
 
-create table account_info (
+create table account_hints (
     account_id 		uid_t 		not null,
     join_code 		code_t 		not null,
     descr0 		descr_t 	null,
@@ -410,7 +410,7 @@ create table my_habitats (
     primary key (user_id, account_id)
 );
 
-create table my_info (
+create table my_hints (
     user_id 		uid_t 		not null,
     join_code 		code_t 		not null,
     descr0 		descr_t 	null,
