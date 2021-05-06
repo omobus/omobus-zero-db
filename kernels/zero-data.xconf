@@ -24,7 +24,7 @@
     >
 <queries>
 <xi:include href="../queries/zero-data/TTD.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
-<xi:include href="../queries/zero-data/account_kpi.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/account_info.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/account_params.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/account_prices.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/accounts.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
@@ -67,7 +67,7 @@
 <xi:include href="../queries/zero-data/my_accounts.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/my_cities.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/my_habitats.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
-<xi:include href="../queries/zero-data/my_kpi.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/my_info.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/my_regions.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/my_retail_chains.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/my_routes.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
@@ -122,6 +122,7 @@
 </queries>
 <pack>
     <TTD />
+    <account_info />
     <account_params />
     <account_prices />
     <accounts />
@@ -164,6 +165,7 @@
     <my_accounts />
     <my_cities />
     <my_habitats />
+    <my_info />
     <my_regions />
     <my_retail_chains />
     <my_routes />

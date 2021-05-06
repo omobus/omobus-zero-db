@@ -86,12 +86,15 @@ create table accounts (
     props 		hstore_t 	null
 );
 
-create table account_kpi (
+create table account_info (
     account_id 		uid_t 		not null,
-    kpi_id 		uid_t 		not null,
+    join_code 		code_t 		not null,
     descr0 		descr_t 	null,
-    descr1 		descr_t 	null,
-    primary key (account_id, kpi_id)
+    descr1 		descr_t) 	null,
+    extra_info 		note_t 		null,
+    attention 		bool_t 		null,
+    row_no 		int32_t 	not null, -- ordering
+    primary key (account_id, join_code, row_no)
 );
 
 create table account_params (
@@ -407,12 +410,15 @@ create table my_habitats (
     primary key (user_id, account_id)
 );
 
-create table my_kpi (
-    kpi_id 		uid_t 		not null,
+create table my_info (
     user_id 		uid_t 		not null,
+    join_code 		code_t 		not null,
     descr0 		descr_t 	null,
     descr1 		descr_t) 	null,
-    primary key (user_id, kpi_id)
+    extra_info 		note_t 		null,
+    attention 		bool_t 		null,
+    row_no 		int32_t 	not null, -- ordering
+    primary key (user_id, join_code, row_no)
 );
 
 create table my_regions (
