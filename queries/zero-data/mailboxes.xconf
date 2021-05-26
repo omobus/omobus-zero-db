@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mailboxes templ="%email%;%descr%;%distr_id%;">
+  <![CDATA[
+select email, descr, distr_id from mailboxes
+    order by 1
+  ]]>
+</mailboxes>

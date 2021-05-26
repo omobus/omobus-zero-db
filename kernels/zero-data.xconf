@@ -59,6 +59,7 @@
 <xi:include href="../queries/zero-data/highlights.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/job_titles.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/kinds.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/mailboxes.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/manufacturers.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/matrices.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/mutuals.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
@@ -157,6 +158,7 @@
     <highlights />
     <job_titles />
     <kinds />
+    <mailboxes />
     <manufacturers />
     <matrices />
     <mutuals />

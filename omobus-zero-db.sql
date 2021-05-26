@@ -377,6 +377,12 @@ create table kinds (
     row_no 		int32_t 	null -- ordering
 );
 
+create table mailboxes (
+    email 		email_t 	not null primary key,
+    descr 		descr_t 	not null,
+    distr_id 		uid_t 		null
+);
+
 create table manufacturers (
     manuf_id 		uid_t 		not null primary key,
     descr 		descr_t 	not null,
@@ -913,6 +919,8 @@ create table additions (
     validated 		bool_t 		not null default 0,
     hidden 		bool_t 		not null default 0,
     geo_address 	address_t 	null,
+    latitude 		gps_t 		null,
+    longitude 		gps_t 		null,
     inserted_ts 	ts_t 		not null default current_timestamp
 );
 
