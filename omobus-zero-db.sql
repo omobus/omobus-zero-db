@@ -921,7 +921,8 @@ create table additions (
     geo_address 	address_t 	null,
     latitude 		gps_t 		null,
     longitude 		gps_t 		null,
-    inserted_ts 	ts_t 		not null default current_timestamp
+    inserted_ts 	ts_t 		not null default current_timestamp,
+    updated_ts 		ts_t 		not null default current_timestamp
 );
 
 create table deletions (
@@ -933,7 +934,8 @@ create table deletions (
     validator_id 	uid_t		null,
     validated 		bool_t 		not null default 0,
     hidden 		bool_t 		not null default 0,
-    inserted_ts 	ts_t 		not null default current_timestamp
+    inserted_ts 	ts_t 		not null default current_timestamp,
+    updated_ts 		ts_t 		not null default current_timestamp
 );
 
 create table locations (
@@ -1019,6 +1021,7 @@ create table wishes (
     validated 		bool_t 		not null default 0,
     hidden 		bool_t 		not null default 0,
     inserted_ts 	ts_t 		not null default current_timestamp,
+    updated_ts 		ts_t 		not null default current_timestamp,
     primary key(account_id, user_id)
 );
 

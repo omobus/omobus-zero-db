@@ -8,7 +8,7 @@ select count(*) exist from deletions
 </check_exist>
 <update>
   <![CDATA[
-update deletions set user_id='%user_id%', fix_dt='%fix_dt%', note='%note%', photo=dbo.uid_in('%photo%'), validator_id=dbo.uid_in('%validator_id%'), validated=0%validated%, hidden=0%hidden%
+update deletions set user_id='%user_id%', fix_dt='%fix_dt%', note='%note%', photo=dbo.uid_in('%photo%'), validator_id=dbo.uid_in('%validator_id%'), validated=0%validated%, hidden=0%hidden%, updated_ts=current_timestamp
     where account_id = '%account_id%'
   ]]>
 </update>
