@@ -130,21 +130,17 @@ create table agreements1 (
     account_id 		uid_t 		not null,
     placement_id 	uid_t 		not null,
     posm_id 		uid_t 		not null,
-    b_date 		date_t 		not null,
-    e_date 		date_t 		not null,
     strict 		bool_t 		not null default 0,
     cookie 		uid_t 		null,
-    primary key (account_id, placement_id, posm_id, b_date)
+    primary key (account_id, placement_id, posm_id)
 );
 
 create table agreements2 (
     account_id 		uid_t 		not null,
     prod_id 		uid_t 		not null,
-    b_date 		date_t 		not null,
-    e_date 		date_t 		not null,
     facing 		int32_t 	not null check(facing > 0),
     strict 		bool_t 		not null default 0,
-    primary key (account_id, prod_id, b_date)
+    primary key (account_id, prod_id)
 );
 
 create table asp_types (
