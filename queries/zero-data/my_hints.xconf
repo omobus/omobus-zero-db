@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <my_hints templ="%user_id%;%join_code%;%descr0%;%descr1%;%extra_info%;%attention%;%row_no%;">
   <![CDATA[
-select user_id, joint_code, descr0, descr1, extra_info, attention, row_no from my_hints
-    order by 1, 2
+select user_id, join_code, descr0, descr1, extra_info, attention, row_no from my_hints
+    order by 1, 2, 7, 3, 5, 6
   ]]>
 </my_hints>
