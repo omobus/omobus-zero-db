@@ -247,7 +247,6 @@ create table contacts (
     surname 		descr_t 	not null,
     patronymic 		descr_t 	null,
     job_title_id 	uid_t 		not null,
-    phone 		phone_t 	null,
     mobile 		phone_t 	null,
     email 		email_t 	null,
     locked 		bool_t 		not null default 0,
