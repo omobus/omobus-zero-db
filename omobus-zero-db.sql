@@ -104,6 +104,7 @@ create table account_params (
     payment_delay 	int32_t 	null,
     payment_method_id 	uid_t 		null,
     wareh_ids 		uids_t 		null,
+    locked 		bool_t 		not null default 0,
     primary key (distr_id, account_id)
 );
 
@@ -359,6 +360,14 @@ create table highlights (
     bgcolor 		color_t 	null,
     remark 		descr_t 	null,
     primary key (account_id, prod_id)
+);
+
+create table invoice_prices (
+    country_id 		country_t 	not null,
+    prod_id 		uid_t 		not null,
+    pack_id 		uid_t 		not null,
+    price 		currency_t 	not null,
+    primary key (country_id, prod_id)
 );
 
 create table job_titles (
