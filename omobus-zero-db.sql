@@ -158,7 +158,8 @@ create table asp_types (
 create table attributes (
     attr_id 		uid_t 		not null primary key,
     descr 		descr_t 	not null,
-    row_no 		int32_t 	null, -- ordering
+    dep_ids 		uids_t 		null,
+    row_no 		int32_t 	null -- ordering
 );
 
 create table audit_criterias (
@@ -208,7 +209,8 @@ create table categories (
 
 create table channels (
     chan_id 		uid_t 		not null primary key,
-    descr 		descr_t 	not null
+    descr 		descr_t 	not null,
+    dep_ids 		uids_t 		null
 );
 
 create table cities (
@@ -250,6 +252,8 @@ create table contacts (
     job_title_id 	uid_t 		not null,
     mobile 		phone_t 	null,
     email 		email_t 	null,
+    spec_id 		uid_t 		null,
+    loyalty_level_id 	uid_t 		null,
     locked 		bool_t 		not null default 0,
     extra_info 		note_t 		null
 );
@@ -372,13 +376,22 @@ create table invoice_prices (
 
 create table job_titles (
     job_title_id 	uid_t 		not null primary key,
-    descr 		descr_t 	not null
+    descr 		descr_t 	not null,
+    dep_ids 		uids_t 		null
 );
 
 create table kinds (
     kind_id 		uid_t 		not null primary key,
     descr 		descr_t 	not null,
     row_no 		int32_t 	null -- ordering
+);
+
+create table loyalty_levels (
+    loyalty_level_id 	uid_t 		not null primary key,
+    descr 		descr_t 	not null,
+    extra_info 		note_t 		null,
+    dep_ids 		uids_t 		null,
+    ron_no 		int32_t 	null
 );
 
 create table mailboxes (
@@ -788,6 +801,13 @@ create table shipments (
     account_id 		uid_t 		not null,
     d_date 		date_t 		not null,
     primary key (distr_id, account_id, d_date)
+);
+
+
+create table specializations (
+    spec_id 		uid_t 		not null primary key,
+    descr 		descr_t 	not null,
+    dep_ids 		uids_t 		null
 );
 
 create table std_prices (

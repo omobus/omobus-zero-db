@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<job_titles templ="%job_title_id%;%descr%;">
+<job_titles templ="%job_title_id%;%descr%;%dep_ids%;">
   <![CDATA[
-select job_title_id, descr from job_titles
+select job_title_id, descr, dep_ids from job_titles
     order by 1
   ]]>
 </job_titles>

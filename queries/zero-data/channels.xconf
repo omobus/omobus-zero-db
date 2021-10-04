@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<channels templ="%chan_id%;%descr%;">
+<channels templ="%chan_id%;%descr%;%dep_ids%;">
   <![CDATA[ 
-select chan_id, descr from channels
+select chan_id, descr, dep_ids from channels
     order by 1
   ]]>
 </channels>

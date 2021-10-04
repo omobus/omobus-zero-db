@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<specializations templ="%spec_id%;%descr%;%dep_ids%;">
+  <![CDATA[
+select spec_id, descr, dep_ids from specializations
+    order by 1
+  ]]>
+</specializations>
