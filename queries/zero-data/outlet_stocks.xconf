@@ -2,6 +2,6 @@
 <outlet_stocks templ="%account_id%;%prod_id%;%s_date%;%stock%;">
   <![CDATA[
 select account_id, prod_id, s_date, stock from outlet_stocks
-    order by 1
+    order by 1, 2, 3
   ]]>
 </outlet_stocks>
