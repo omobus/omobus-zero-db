@@ -144,6 +144,14 @@ create table agreements2 (
     primary key (account_id, prod_id)
 );
 
+create table agreements3 (
+    account_id 		uid_t 		not null,
+    prod_id 		uid_t 		not null,
+    stock 		int32_t 	not null check(stock > 0),
+    strict 		bool_t 		not null default 0,
+    primary key (account_id, prod_id)
+);
+
 create table asp_types (
     asp_type_id 	uid_t 		not null primary key,
     descr 		descr_t 	not null,
