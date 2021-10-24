@@ -518,6 +518,14 @@ create table order_types (
     row_no 		int32_t 	null -- ordering
 );
 
+create table outlet_stocks (
+    account_id 		uid_t 		not null,
+    prod_id 		uid_t 		not null,
+    s_date 		date_t 		not null,
+    stock 		int32_t 	not null check( stock > 0 ),
+    primary key(account_id, prod_id)
+);
+
 create table ownership_types (
     ownership_type_id 	uid_t		not null primary key,
     descr 		descr_t		not null,

@@ -77,6 +77,7 @@
 <xi:include href="../queries/zero-data/oos_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/order_params.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/order_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/outlet_stocks.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/ownership_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/packs.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/payment_methods.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
@@ -177,6 +178,7 @@
     <oos_types />
     <order_params />
     <order_types />
+    <outlet_stocks />
     <ownership_types />
     <packs />
     <payment_methods />
