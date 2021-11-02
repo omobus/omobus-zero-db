@@ -615,9 +615,7 @@ create table plu_codes (
 create table pmlist (
     account_id 		uid_t 		not null,
     prod_id 		uid_t 		not null,
-    b_date 		date_t 		not null,
-    e_date 		date_t 		not null,
-    primary key(account_id, prod_id, b_date)
+    primary key(account_id, prod_id)
 );
 
 create table pos_materials ( /* Point-of-Sale and Point-of-Purchase materials */

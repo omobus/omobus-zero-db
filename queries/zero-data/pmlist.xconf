@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<pmlist templ="%account_id%;%prod_id%;%b_date%;%e_date%;">
+<pmlist templ="%account_id%;%prod_id%;">
   <![CDATA[ 
-select account_id, prod_id, b_date, e_date from pmlist
-    order by 1, 2, 3
+select account_id, prod_id from pmlist
+    order by 1, 2
   ]]>
 </pmlist>
