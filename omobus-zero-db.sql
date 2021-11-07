@@ -374,6 +374,22 @@ create table highlights (
     primary key (account_id, prod_id)
 );
 
+create table influence_levels (
+    influence_level_id 	uid_t 		not null primary key,
+    descr 		descr_t 	not null,
+    extra_info 		note_t 		null,
+    dep_ids 		uids_t 		null,
+    row_no 		int32_t 	null
+);
+
+create table interaction_types (
+    interaction_type_id uid_t 		not null primary key,
+    descr 		descr_t 	not null,
+    extra_info 		note_t 		null,
+    dep_ids 		uids_t 		null,
+    row_no 		int32_t 	null
+);
+
 create table invoice_prices (
     country_id 		country_t 	not null,
     prod_id 		uid_t 		not null,
@@ -399,7 +415,7 @@ create table loyalty_levels (
     descr 		descr_t 	not null,
     extra_info 		note_t 		null,
     dep_ids 		uids_t 		null,
-    ron_no 		int32_t 	null
+    row_no 		int32_t 	null
 );
 
 create table mailboxes (

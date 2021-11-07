@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<influence_levels templ="%influence_level_id%;%descr%;%extra_info%;%dep_ids%;%row_no%;">
+  <![CDATA[
+select influence_level_id, descr, extra_info, dep_ids, row_no from influence_levels
+    order by 1
+  ]]>
+</influence_levels>

@@ -58,6 +58,8 @@
 <xi:include href="../queries/zero-data/floating_prices.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/group_prices.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/highlights.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/influence_levels.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/interaction_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/invoice_prices.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/job_titles.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/kinds.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
@@ -162,6 +164,8 @@
     <floating_prices />
     <group_prices />
     <highlights />
+    <influence_levels />
+    <interaction_types />
     <job_titles />
     <kinds />
     <mailboxes />
