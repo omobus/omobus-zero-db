@@ -1039,6 +1039,21 @@ create table orders (
     primary key (doc_id, prod_id)
 );
 
+create table profiles (
+    doc_id 		uid_t 		not null primary key,
+    fix_dt 		datetime_t 	not null,
+    user_id 		uid_t 		not null,
+    account_id 		uid_t 		not null,
+    chan_id 		uid_t 		null,
+    poten_id 		uid_t 		null,
+    phone 		phone_t 	null,
+    workplaces 		int32_t 	null check(workplaces > 0),
+    team 		int32_t 	null check(team > 0),
+    interaction_type_id uid_t 		null,
+    attr_ids 		uids_t 		null,
+    inserted_ts 	ts_t 		not null default current_timestamp
+);
+
 create table reclamations (
     doc_id 		uid_t 		not null,
     fix_dt 		datetime_t 	not null,
@@ -1146,6 +1161,13 @@ end
 go
 
 create function note_in(@arg0 uid_t) returns note_t
+as
+begin
+    return case when @arg0 = '' then null else @arg0 end
+end
+go
+
+create function phone_in(@arg0 phone_t) returns uid_t
 as
 begin
     return case when @arg0 = '' then null else @arg0 end
