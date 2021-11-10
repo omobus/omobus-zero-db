@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cohorts templ="%cohort_id%;%descr%;%extra_info%;%dep_ids%;%row_no%;">
+  <![CDATA[
+select cohort_id, descr, extra_info, dep_ids, row_no from cohorts
+    order by 1
+  ]]>
+</cohorts>

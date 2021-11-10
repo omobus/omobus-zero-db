@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<contacts templ="%contact_id%;%account_id%;%name%;%surname%;%patronymic%;%job_title_id%;%mobile%;%email%;%spec_id%;%loyalty_level_id%;%influence_level_id%;%locked%;%extra_info%;">
+<contacts templ="%contact_id%;%account_id%;%name%;%surname%;%patronymic%;%job_title_id%;%mobile%;%email%;%spec_id%;%cohort_id%;%loyalty_level_id%;%influence_level_id%;%intensity_level_id%;%start_year%;%locked%;%extra_info%;">
   <![CDATA[
-select contact_id, account_id, name, patronymic, surname, job_title_id, mobile, email, spec_id, loyalty_level_id, influence_level_id, locked, extra_info from contacts
+select contact_id, account_id, name, patronymic, surname, job_title_id, mobile, email, spec_id, cohort_id, loyalty_level_id, influence_level_id, intensity_level_id, start_year, locked, extra_info from contacts
     order by 1, 2
   ]]>
 </contacts>

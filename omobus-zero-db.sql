@@ -229,6 +229,14 @@ create table cities (
     country_id 		uid_t 		not null
 );
 
+create table cohorts (
+    cohort_id 		uid_t 		not null primary key,
+    descr 		descr_t 	not null,
+    extra_info 		note_t 		null,
+    dep_ids 		uids_t 		null,
+    row_no 		int32_t 	null
+);
+
 create table comment_types (
     comment_type_id 	uid_t 		not null primary key,
     descr 		descr_t 	not null,
@@ -261,7 +269,11 @@ create table contacts (
     mobile 		phone_t 	null,
     email 		email_t 	null,
     spec_id 		uid_t 		null,
+    cohort_id 		uid_t 		null,
     loyalty_level_id 	uid_t 		null,
+    influence_level_id 	uid_t 		null,
+    intensity_level_id 	uid_t 		null,
+    start_year 		int32_t 	null,
     locked 		bool_t 		not null default 0,
     extra_info 		note_t 		null
 );
@@ -378,6 +390,13 @@ create table influence_levels (
     influence_level_id 	uid_t 		not null primary key,
     descr 		descr_t 	not null,
     extra_info 		note_t 		null,
+    dep_ids 		uids_t 		null,
+    row_no 		int32_t 	null
+);
+
+create table intensity_levels (
+    intensity_level_id 	uid_t 		not null primary key,
+    descr 		descr_t 	not null,
     dep_ids 		uids_t 		null,
     row_no 		int32_t 	null
 );
