@@ -90,7 +90,7 @@ create table account_hints (
     account_id 		uid_t 		not null,
     join_code 		code_t 		not null,
     descr0 		descr_t 	null,
-    descr1 		descr_t) 	null,
+    descr1 		descr_t 	null,
     extra_info 		note_t 		null,
     attention 		bool_t 		null,
     row_no 		int32_t 	not null, -- ordering
@@ -480,7 +480,7 @@ create table my_hints (
     user_id 		uid_t 		not null,
     join_code 		code_t 		not null,
     descr0 		descr_t 	null,
-    descr1 		descr_t) 	null,
+    descr1 		descr_t 	null,
     extra_info 		note_t 		null,
     attention 		bool_t 		null,
     row_no 		int32_t 	not null, -- ordering
@@ -1186,7 +1186,7 @@ begin
 end
 go
 
-create function phone_in(@arg0 phone_t) returns uid_t
+create function phone_in(@arg0 phone_t) returns phone_t
 as
 begin
     return case when @arg0 = '' then null else @arg0 end
