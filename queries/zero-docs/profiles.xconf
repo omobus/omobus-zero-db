@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<profiles templ="%doc_id%;%fix_dt%;%user_id%;%account_id%;%chan_id%;%poten_id%;%phone%;%workplaces%;%team%;%interaction_type_id%;%attr_ids%">
+<profiles templ="%doc_id%;%fix_dt%;%user_id%;%account_id%;%chan_id%;%poten_id%;%phone%;%workplaces%;%team%;%interaction_type_id%;%attr_ids%;">
 <check_exist>
   <![CDATA[
-select count(*) exist from profiles 
+select count(*) exist from profiles
     where doc_id = '%doc_id%'
   ]]>
 </check_exist>
 <insert>
   <![CDATA[
-insert into profiles (doc_id, fix_dt, user_id, account_id, chan_id, poten_id, phone, workplaces, team, interaction_type_id, attr_ids) 
-    values ('%doc_id%', '%fix_dt%', '%user_id%', '%account_id%', dbo.uid_in('%chan_id%'), dbo.uid_in('%poten_id%'), dbo.phone_in('%phone%'), dbo.int32_in('%workplaces%), dbo.int32_in('%team%'), dbo.uid_in('%interaction_type_id%), dbo.uids_in('%attr_ids%))
+insert into profiles (doc_id, fix_dt, user_id, account_id, chan_id, poten_id, phone, workplaces, team, interaction_type_id, attr_ids)
+    values ('%doc_id%', '%fix_dt%', '%user_id%', '%account_id%', dbo.uid_in('%chan_id%'), dbo.uid_in('%poten_id%'), dbo.phone_in('%phone%'), dbo.int32_in('%workplaces%'), dbo.int32_in('%team%'), dbo.uid_in('%interaction_type_id%'), dbo.uids_in('%attr_ids%'))
   ]]>
 </insert>
 </profiles>
