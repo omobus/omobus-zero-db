@@ -96,6 +96,7 @@
 <xi:include href="../queries/zero-data/pos_materials.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/priorities.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/products.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/quest_items.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/quest_names.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/quest_rows.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/rating_criterias.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
@@ -200,6 +201,9 @@
     <potentials />
     <pos_materials />
     <products />
+    <quest_items />
+    <quest_names />
+    <quest_rows />
     <rating_criterias />
     <rating_scores />
     <rdd />
