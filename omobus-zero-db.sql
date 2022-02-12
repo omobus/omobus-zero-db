@@ -827,7 +827,7 @@ create table retail_chains (
 create table rules (
     doc_type 		doctype_t 	not null,
     role 		code_t 		not null,
-    frequency 		code_t 		not null check(frequency in ('everytime','once_a_week','once_a_month')),
+    frequency 		code_t 		not null check(frequency in ('everytime','once_a_week','once_a_month','once_a_quarter')),
     account_ids 	uids_t 		null,
     region_ids 		uids_t		null,
     city_ids 		uids_t		null,
