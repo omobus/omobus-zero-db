@@ -26,7 +26,6 @@ go
 
 
 execute sp_addtype address_t, 'varchar(256)'
-execute sp_addtype art_t, 'varchar(24)'
 execute sp_addtype blob_t, 'varchar(32)'
 execute sp_addtype blobs_t, 'varchar(2048)'
 execute sp_addtype bool_t, 'smallint'
@@ -684,7 +683,6 @@ create table products (
     brand_id 		uid_t 		null,
     categ_id 		uid_t 		null,
     shelf_life_id 	uid_t 		null,
-    art 		art_t 		null,
     obsolete 		bool_t 		null,
     novelty 		bool_t 		null,
     promo 		bool_t 		null,
