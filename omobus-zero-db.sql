@@ -662,7 +662,8 @@ create table pos_materials ( /* Point-of-Sale and Point-of-Purchase materials */
     country_id		country_t 	not null,
     dep_ids 		uids_t 		null,
     b_date 		date_t 		null,
-    e_date 		date_t 		null
+    e_date 		date_t 		null,
+    shared 		bool_t 		not null default 0
 );
 
 create table priorities (
