@@ -251,7 +251,7 @@ create table confirmation_types (
     min_note_length 	int32_t 	null,
     photo_needed 	bool_t 		null,
     accomplished 	bool_t 		null,
-    succeeded 		bool_t 		null,
+    succeeded 		varchar(6) 	null check(succeeded in ('yes','no','partly')),
     extra_info 		note_t 		null,
     target_type_ids 	uids_t 		not null,
     row_no 		int32_t 	null, -- ordering
