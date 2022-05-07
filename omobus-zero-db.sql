@@ -939,9 +939,10 @@ create table users (
 
 create table vf_accounts (
     vf_id 		uid_t 		not null,
+    user_id 		uid_t 		not null default '',
     account_id 		uid_t 		not null,
     row_no 		int32_t 	null, -- ordering
-    primary key(vf_id, account_id)
+    primary key(vf_id, user_id, account_id)
 );
 
 create table vf_names (
@@ -952,7 +953,7 @@ create table vf_names (
 
 create table vf_products (
     vf_id 		uid_t 		not null,
-    account_id 		uid_t 		not null,
+    account_id 		uid_t 		not null default '',
     prod_id 		uid_t 		not null,
     row_no 		int32_t 	null, -- ordering
     primary key(vf_id, account_id, prod_id)
