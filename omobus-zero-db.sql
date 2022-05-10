@@ -92,8 +92,8 @@ create table account_hints (
     descr1 		descr_t 	null,
     extra_info 		note_t 		null,
     attention 		bool_t 		null,
-    row_no 		int32_t 	not null, -- ordering
-    primary key (account_id, join_code, row_no)
+    row_no 		int32_t 	null, -- ordering
+    primary key (account_id, join_code, descr0)
 );
 
 create table account_params (
@@ -481,8 +481,8 @@ create table my_hints (
     descr1 		descr_t 	null,
     extra_info 		note_t 		null,
     attention 		bool_t 		null,
-    row_no 		int32_t 	not null, -- ordering
-    primary key (user_id, join_code, row_no)
+    row_no 		int32_t 	null, -- ordering
+    primary key (user_id, join_code, descr0)
 );
 
 create table my_regions (
