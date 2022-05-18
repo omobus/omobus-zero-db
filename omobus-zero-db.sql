@@ -648,6 +648,7 @@ create table plu_codes (
 create table pmlist (
     account_id 		uid_t 		not null,
     prod_id 		uid_t 		not null,
+    strict 		bool_t 		null,
     primary key(account_id, prod_id)
 );
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<pmlist templ="%account_id%;%prod_id%;">
+<pmlist templ="%account_id%;%prod_id%;%strict%;">
   <![CDATA[ 
-select account_id, prod_id from pmlist
+select account_id, prod_id, strict from pmlist
     order by 1, 2
   ]]>
 </pmlist>
