@@ -741,6 +741,7 @@ create table rating_scores (
     descr 		descr_t 	not null,
     score 		int32_t 	not null,
     wf 			wf_t 		not null check(wf between 0.00 and 1.00),
+    extra_info 		note_t 		null,
     row_no 		int32_t 	null
 );
 
