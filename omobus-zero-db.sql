@@ -274,7 +274,11 @@ create table contacts (
     intensity_level_id 	uid_t 		null,
     start_year 		int32_t 	null,
     locked 		bool_t 		not null default 0,
-    extra_info 		note_t 		null
+    extra_info 		note_t 		null,
+    consent_data 	blob_t 		null,
+    consent_type 	varchar(32) 	null check(consent_type in ('application/pdf')),
+    consent_status 	varchar(24) 	null check(consent_status in ('collecting','collecting_and_informing')),
+    consent_dt 		datetime_t 	null
 );
 
 create table debts (
