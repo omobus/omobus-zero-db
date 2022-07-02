@@ -88,7 +88,7 @@ create table accounts (
 create table account_hints (
     account_id 		uid_t 		not null,
     join_code 		code_t 		not null,
-    descr0 		descr_t 	null,
+    descr0 		descr_t 	not null,
     descr1 		descr_t 	null,
     extra_info 		note_t 		null,
     attention 		bool_t 		null,
@@ -278,7 +278,8 @@ create table contacts (
     consent_data 	blob_t 		null,
     consent_type 	varchar(32) 	null check(consent_type in ('application/pdf')),
     consent_status 	varchar(24) 	null check(consent_status in ('collecting','collecting_and_informing')),
-    consent_dt 		datetime_t 	null
+    consent_dt 		datetime_t 	null,
+    consent_country 	country_t 	null
 );
 
 create table debts (
@@ -481,7 +482,7 @@ create table my_habitats (
 create table my_hints (
     user_id 		uid_t 		not null,
     join_code 		code_t 		not null,
-    descr0 		descr_t 	null,
+    descr0 		descr_t 	not null,
     descr1 		descr_t 	null,
     extra_info 		note_t 		null,
     attention 		bool_t 		null,
