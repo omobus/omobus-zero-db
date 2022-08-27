@@ -744,10 +744,12 @@ create table rating_criterias (
 create table rating_scores (
     rating_score_id 	uid_t 		not null primary key,
     descr 		descr_t 	not null,
-    score 		int32_t 	not null,
-    wf 			wf_t 		not null check(wf between 0.00 and 1.00),
+    score 		int32_t 	null check(score >= 0),
+    wf 			wf_t 		null check(wf between 0.00 and 1.00),
     extra_info 		note_t 		null,
-    row_no 		int32_t 	null
+    rating_criteria_id 	uid_t 		null,
+    row_no 		int32_t 	null,
+    check((score is not null and wf is not null) or (score is null and wf is null))
 );
 
 create table rdd (

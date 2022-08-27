@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rating_scores templ="%rating_score_id%;%descr%;%score%;%wf%;%extra_info%;%row_no%;">
+<rating_scores templ="%rating_score_id%;%descr%;%score%;%wf%;%extra_info%;%rating_criteria_id%;%row_no%;">
   <![CDATA[
-select rating_score_id, descr, score, wf, extra_info, row_no from rating_scores
+select rating_score_id, descr, score, wf, extra_info, rating_criteria_id, row_no from rating_scores
     order by 1
   ]]>
 </rating_scores>
