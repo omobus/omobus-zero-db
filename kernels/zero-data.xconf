@@ -109,7 +109,6 @@
 <xi:include href="../queries/zero-data/refunds.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/refunds_products.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/regions.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
-<xi:include href="../queries/zero-data/remark_types.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/restrictions.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/retail_chains.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/rules.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
@@ -214,7 +213,6 @@
     <refunds />
     <refunds_products />
     <regions />
-    <remark_types />
     <restrictions />
     <retail_chains />
     <rules />

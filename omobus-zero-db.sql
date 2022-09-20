@@ -807,12 +807,6 @@ create table regions (
     country_id 		country_t 	null
 );
 
-create table remark_types (
-    remark_type_id 	uid_t 		not null primary key,
-    descr 		descr_t 	not null,
-    row_no 		int32_t 	null -- ordering
-);
-
 create table restrictions (
     distr_id 		uid_t 		not null,
     account_id 		uid_t 		not null,
