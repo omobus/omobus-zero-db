@@ -723,6 +723,7 @@ create table quest_rows (
     ftype 		ftype_t 	not null,
     descr 		descr_t 	not null,
     qtype 		varchar(10) 	null /*check(ftype=0 and qtype in ('boolean','triboolean','integer','text','selector') or (ftype<>0 and qtype is null))*/,
+    mandatory 		bool_t 		null /*check((ftype=0 and mandatory is not null) or (ftype<>0 and mandatory is null))*/,
     extra_info 		note_t 		null,
     country_ids 	countries_t 	null,
     dep_ids 		uids_t 		null,
