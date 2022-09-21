@@ -917,6 +917,8 @@ create table target_types (
 create table training_types (
     training_type_id 	uid_t 		not null primary key,
     descr 		descr_t 	not null,
+    min_contacts 	int32_t 	null check(min_contacts is null or min_contacts > 0),
+    max_contacts 	int32_t 	null check(max_contacts is null or max_contacts > 0),
     dep_ids 		uids_t 		null,
     row_no 		int32_t 	null -- ordering
 );
