@@ -2,6 +2,6 @@
 <vf_accounts templ="%vf_id%;%user_id%;%account_id%;%row_no%;">
   <![CDATA[
 select vf_id, user_id, account_id, row_no from vf_accounts
-    order by 1, 2
+    order by 1, 2, 3
   ]]>
 </vf_accounts>
