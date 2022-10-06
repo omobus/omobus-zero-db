@@ -661,7 +661,8 @@ create table pmlist (
 create table pos_materials ( /* Point-of-Sale and Point-of-Purchase materials */
     posm_id 		uid_t 		not null primary key,
     descr 		descr_t 	not null,
-    "image" 		blob_t 		not null,
+    content_blob 	blob_t 		not null,
+    content_type 	varchar(32) 	not null,
     brand_ids 		uids_t 		not null,
     placement_ids 	uids_t 		null,
     chan_ids 		uids_t 		null,
