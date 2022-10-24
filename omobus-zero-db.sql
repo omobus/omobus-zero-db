@@ -140,6 +140,7 @@ create table agreements2 (
     prod_id 		uid_t 		not null,
     facing 		int32_t 	not null check(facing > 0),
     strict 		bool_t 		not null default 0,
+    cookie 		uid_t 		null,
     primary key (account_id, prod_id)
 );
 
