@@ -646,7 +646,7 @@ create table placements (
 );
 
 create table plu_codes (
-    account_id 		uid_t 		not null,
+    rc_id 		uid_t 		not null,
     prod_id 		uid_t 		not null,
     plu_code 		code_t 		not null,
     primary key(account_id, prod_id)
