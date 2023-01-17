@@ -875,6 +875,12 @@ create table specializations (
     dep_ids 		uids_t 		null
 );
 
+create table speclist (
+    account_id 		uid_t 		not null,
+    prod_id 		uid_t 		not null,
+    primary key(account_id, prod_id)
+);
+
 create table std_prices (
     distr_id 		uid_t 		not null,
     prod_id 		uid_t 		not null,

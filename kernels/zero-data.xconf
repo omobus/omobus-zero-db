@@ -116,6 +116,7 @@
 <xi:include href="../queries/zero-data/shelf_lifes.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/shipments.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/specializations.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
+<xi:include href="../queries/zero-data/speclist.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/std_prices.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/symlinks.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
 <xi:include href="../queries/zero-data/targets.xconf" xmlns:xi="http://www.w3.org/2003/XInclude" />
@@ -219,6 +220,7 @@
     <sales_history />
     <shelf_lifes />
     <shipments />
+    <speclist />
     <std_prices />
     <symlinks />
     <targets />
