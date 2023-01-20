@@ -1,3 +1,8 @@
+This is the mirror of origin repository that was moved to https://gitflic.ru/project/omobus/omobus-master-data.
+
+***
+
+
 # OMOBUS Zero DB
 
 This project provides a reference version of the implementation 
@@ -16,7 +21,7 @@ and password "0". Don't forget to change default password.
 
 # LICENSE
 
-Copyright (c) 2006 - 2022 ak-obs, Ltd. <info@omobus.net>.
+Copyright (c) 2006 - 2023 ak-obs, Ltd. <info@omobus.net>.
 All rights reserved.
 
 This program is a free software. Redistribution and use in source
