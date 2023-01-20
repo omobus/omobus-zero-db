@@ -759,7 +759,7 @@ create table rating_scores (
 create table rdd (
     distr_id 		uid_t 		not null,
     obj_code 		code_t 		not null,
-    r_date 		datetimetz_t 	not null,
+    r_date 		date_t 		not null,
     primary key(distr_id, obj_code)
 );
 
